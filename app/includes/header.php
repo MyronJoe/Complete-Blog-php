@@ -43,7 +43,7 @@
 					<!-- nav -->
 					<ul class="nav-menu">
 						<li class="has-dropdown">
-							<a href="index.html">Home</a>
+							<a href="<?php echo BASE_URL . '/' ?>">Home</a>
 							<div class="dropdown">
 								<div class="dropdown-body">
 									<ul class="dropdown-list">
@@ -52,7 +52,7 @@
 										<li><a href="author.html">Author page</a></li>
 										<li><a href="about.html">About Us</a></li>
 										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="blank.html">Regular</a></li>
+										<li><a href="<?php echo BASE_URL . '/register.php' ?>">Register</a></li>
 									</ul>
 								</div>
 							</div>

@@ -65,13 +65,7 @@
                 <form method="POST" class="form-g" action="register.php" novalidate class="form_sec">
 
                     <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
-
-                    <div>
-                        <label for="name">Name *</label>
-                        <input type="text" class="form-control" id="name" name="username">
-                    </div>
-
-
+                    
                     <div>
                         <label for="email">Email *</label>
                         <input type="email" class="form-control" id="email" name="email">
@@ -83,20 +77,12 @@
                         <input type="password" class="form-control" id="Password" name="password">
                     </div>
 
-
-                    <div>
-                        <label for="Confirm Password">Confirm Password *</label>
-                        <input type="password" class="form-control" id="Confirm Password" name="passwordconfirm">
-                    </div>
-
-
-
                     <div class="form-group mb-0">
-                        <input type="submit" name="register-btn" value="sign up" class="btn">
+                        <input type="submit" name="register-btn" value="sign in" class="btn">
                     </div>
 
                     <div>
-                        <small style="font-size: 11px;">Already have an account? <a href="<?php echo BASE_URL . '/login.php' ?>">Sing In</a></small>
+                        <small style="font-size: 11px;">Do not have an account? <a href="<?php echo BASE_URL . '/register.php' ?>">Sing Up</a></small>
                     </div>
                 </form>
 
