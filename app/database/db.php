@@ -72,7 +72,6 @@
         $stmt = executeQuery($sql, $conditions);
         $records = $stmt->get_result()->fetch_assoc();
         return $records;
-       
         
     }
 

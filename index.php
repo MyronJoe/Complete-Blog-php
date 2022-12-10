@@ -5,118 +5,18 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php
+		require_once 'path.php';
+		include(ROOT_PATH . "/app/includes/css.php");
 
+	?>
 	<title>FrankNaija</title>
-
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
-
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
 
 </head>
 
 <body>
 	<!-- HEADER -->
-	<header id="header">
-		<!-- NAV -->
-		<div id="nav">
-			<!-- Top Nav -->
-			<div id="nav-top">
-				<div class="container">
-					<!-- social -->
-					<ul class="nav-social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-					<!-- /social -->
-
-					<!-- logo -->
-					<div class="nav-logo">
-						<a href="index.html" class="logo"><h1 style="margin-top:17px">Frank<spn style='color:orangered'>Naija</span></h1></a>
-					</div>
-					<!-- /logo -->
-
-					<!-- search & aside toggle -->
-					<div class="nav-btns">
-						<button class="aside-btn"><i class="fa fa-bars"></i></button>
-						<button class="search-btn"><i class="fa fa-search"></i></button>
-						<div id="nav-search">
-							<form>
-								<input class="input" name="search" placeholder="Enter your search...">
-							</form>
-							<button class="nav-close search-close">
-								<span></span>
-							</button>
-						</div>
-					</div>
-					<!-- /search & aside toggle -->
-				</div>
-			</div>
-			<!-- /Top Nav -->
-
-			<!-- Main Nav -->
-			<div id="nav-bottom">
-				<div class="container">
-					<!-- nav -->
-					<ul class="nav-menu">
-						<li class="has-dropdown">
-							<a href="index.html">Home</a>
-							<div class="dropdown">
-								<div class="dropdown-body">
-									<ul class="dropdown-list">
-										<li><a href="category.html">Category page</a></li>
-										<li><a href="blog-post.html">Post page</a></li>
-										<li><a href="author.html">Author page</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="blank.html">Regular</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li><a href="index.html">Lifestyle</a></li>
-						<li><a href="#">Fashion</a></li>
-						<li><a href="#">Technology</a></li>
-						<li><a href="#">Health</a></li>
-						<li><a href="#">Travel</a></li>
-					</ul>
-					<!-- /nav -->
-				</div>
-			</div>
-			<!-- /Main Nav -->
-
-			<!-- Aside Nav -->
-			<div id="nav-aside">
-				<ul class="nav-aside-menu">
-					<li><a href="index.html">Home</a></li>
-					<li class="has-dropdown"><a>Categories</a>
-						<ul class="dropdown">
-							<li><a href="#">Lifestyle</a></li>
-							<li><a href="#">Fashion</a></li>
-							<li><a href="#">Technology</a></li>
-							<li><a href="#">Travel</a></li>
-							<li><a href="#">Health</a></li>
-						</ul>
-					</li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="contact.html">Contacts</a></li>
-					<li><a href="#">Advertise</a></li>
-				</ul>
-				<button class="nav-close nav-aside-close"><span></span></button>
-			</div>
-			<!-- /Aside Nav -->
-		</div>
-		<!-- /NAV -->
-	</header>
+	<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 	<!-- /HEADER -->
 
 	<!-- SECTION -->
@@ -543,57 +443,7 @@
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
-			<div class="row">
-				<div class="col-md-4">
-					<div class="footer-widget">
-						<div class="footer-logo">
-							<a href="index.html" class="logo"><h1 style='color:white'>Frank<span style='color:orangered'>Naija</span></h1></a>
-						</div>
-						<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-						<ul class="contact-social">
-							<li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="footer-widget">
-						<h3 class="footer-title">Categories</h3>
-						<div class="category-widget">
-							<ul>
-								<li><a href="#">Lifestyle <span>451</span></a></li>
-								<li><a href="#">Fashion <span>230</span></a></li>
-								<li><a href="#">Technology <span>40</span></a></li>
-								<li><a href="#">Travel <span>38</span></a></li>
-								<li><a href="#">Health <span>24</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="footer-widget">
-						<h3 class="footer-title">Tags</h3>
-						<div class="tags-widget">
-							<ul>
-								<li><a href="#">Social</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Life</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Magazine</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Health</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-			</div>
+			<?php require(ROOT_PATH . "/app/includes/footer.php") ?>
 			<!-- /row -->
 
 			<!-- row -->
