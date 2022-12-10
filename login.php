@@ -11,7 +11,7 @@
     include(ROOT_PATH . "/app/includes/css.php");
 
     ?>
-    <title>FrankNaija - Register</title>
+    <title>FrankNaija - Login</title>
 
     <style>
         .form-g{
@@ -42,7 +42,7 @@
         }
         .form-error {
             background-color: #ffb9d1;
-            padding:10px;
+            padding: 10px 10px 0px 10px;
             border: 2px solid #491217;
             margin-bottom: 1em;
         }
@@ -74,13 +74,13 @@
 
                     <div>
                         <label for="email">Email *</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" value="<?php echo $email ?>" id="email" name="email">
                     </div>
 
 
                     <div>
                         <label for="Password">Password *</label>
-                        <input type="password" class="form-control" id="Password" name="password">
+                        <input type="password" class="form-control" value="<?php echo $password ?>" id="Password" name="password">
                     </div>
 
                     <div class="form-group mb-0">

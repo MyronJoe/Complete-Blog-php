@@ -5,9 +5,48 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.success {
+			color: #155724;
+			border: 2px solid #155724;
+			padding-top: 15px;
+			padding-left: 10px;
+			background-color: #d4edda;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			border-color: #c3e6cb;
+			width: 90%;
+			margin: auto;
+			position: absolute;
+			z-index: 10;
+			left: 0;
+			right: 0;
+			top: 120px;
+		}
+
+		.danger {
+			color: #491217;
+			background-color: #ffb9d1;
+			border-color: #491217;
+			padding-top: 15px;
+			padding-left: 10px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			border-color: #c3e6cb;
+			width: 90%;
+			margin: auto;
+			position: absolute;
+			z-index: 10;
+			left: 0;
+			right: 0;
+			top: 120px;
+		}
+	</style>
 	<?php
-		require_once 'path.php';
-		include(ROOT_PATH . "/app/includes/css.php");
+	require_once 'path.php';
+	include(ROOT_PATH . "/app/includes/css.php");
 
 	?>
 	<title>FrankNaija</title>
@@ -15,12 +54,14 @@
 </head>
 
 <body>
+
 	<!-- HEADER -->
 	<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 	<!-- /HEADER -->
 
 	<!-- SECTION -->
 	<div class="section">
+
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
@@ -115,7 +156,7 @@
 									</div>
 								</div>
 								<!-- /post -->
-			
+
 								<!-- post -->
 								<div class="post post-widget">
 									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-2.jpg" alt=""></a>
@@ -132,7 +173,7 @@
 									</div>
 								</div>
 								<!-- /post -->
-			
+
 								<!-- post -->
 								<div class="post post-widget">
 									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-3.jpg" alt=""></a>
@@ -149,7 +190,7 @@
 								</div>
 								<!-- /post -->
 							</div>
-							
+
 							<div class="col-md-6" style="padding:0 2em">
 								<!-- post -->
 								<div class="post post-widget">
@@ -166,7 +207,7 @@
 									</div>
 								</div>
 								<!-- /post -->
-			
+
 								<!-- post -->
 								<div class="post post-widget">
 									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-9.jpg" alt=""></a>
@@ -182,7 +223,7 @@
 									</div>
 								</div>
 								<!-- /post -->
-			
+
 								<!-- post -->
 								<div class="post post-widget">
 									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-10.jpg" alt=""></a>
@@ -354,7 +395,7 @@
 							<h2 class="title">Trending Video</h2>
 						</div>
 						<div style="height:300px; width:100%; background-color:red;">
-							
+
 						</div>
 					</div>
 					<!-- /category widget -->
@@ -459,7 +500,9 @@
 				</div>
 				<div class="col-md-6 col-md-pull-6">
 					<div class="footer-copyright">
-						<a href="index.html" class="logo"><h1 style='color:white'>Frank<span>Naija</span></h1></a>
+						<a href="index.html" class="logo">
+							<h1 style='color:white'>Frank<span>Naija</span></h1>
+						</a>
 					</div>
 				</div>
 			</div>

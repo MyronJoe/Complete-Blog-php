@@ -1,3 +1,6 @@
+<?php 
+require_once(ROOT_PATH . "/app/includes/session.php");
+?>
 <header id="header">
 		<!-- NAV -->
 		<div id="nav">
@@ -90,4 +93,8 @@
 			<!-- /Aside Nav -->
 		</div>
 		<!-- /NAV -->
+
 	</header>
+	<?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
+
+	
