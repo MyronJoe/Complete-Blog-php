@@ -65,6 +65,19 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 						<li><a href="#">Technology</a></li>
 						<li><a href="#">Health</a></li>
 						<li><a href="#">Travel</a></li>
+
+						<li class="has-dropdown">
+							<a href="#"><?php echo $_SESSION['username']; ?></a>
+							<div class="dropdown">
+								<div class="dropdown-body">
+									<ul class="dropdown-list">
+										<li><a href="category.html">Dashboard</a></li>
+										<li><a href="contact.html">Profile</a></li>
+										<li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<!-- /nav -->
 				</div>
