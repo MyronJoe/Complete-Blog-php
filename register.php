@@ -40,6 +40,12 @@
             color: orangered !important;
             border-radius: 0 !important;
         }
+        .form-error {
+            background-color: #ffb9d1;
+            padding:10px;
+            border: 2px solid #491217;
+            margin-bottom: 1em;
+        }
         @media screen and (min-width:800px) {
             .container{
                 width: 70%;

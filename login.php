@@ -40,6 +40,12 @@
             color: orangered !important;
             border-radius: 0 !important;
         }
+        .form-error {
+            background-color: #ffb9d1;
+            padding:10px;
+            border: 2px solid #491217;
+            margin-bottom: 1em;
+        }
         @media screen and (min-width:800px) {
             .container{
                 width: 70%;
@@ -62,10 +68,10 @@
                     <h4>Register</h4>
                 </div>
 
-                <form method="POST" class="form-g" action="register.php" novalidate class="form_sec">
+                <form method="POST" class="form-g" action="login.php" novalidate class="form_sec">
 
                     <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
-                    
+
                     <div>
                         <label for="email">Email *</label>
                         <input type="email" class="form-control" id="email" name="email">
@@ -78,7 +84,7 @@
                     </div>
 
                     <div class="form-group mb-0">
-                        <input type="submit" name="register-btn" value="sign in" class="btn">
+                        <input type="submit" name="login-btn" value="sign in" class="btn">
                     </div>
 
                     <div>
