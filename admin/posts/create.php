@@ -3,7 +3,7 @@
 require_once '../../path.php';
 require_once(ROOT_PATH . '/admin/includes/adminheader.php');
 require_once(ROOT_PATH . '/app/controllers/posts.php');
-adminOnly();
+// adminOnly();
 ?>
 <section style="display: flex;">
     <div class="lside">
