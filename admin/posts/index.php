@@ -24,6 +24,7 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
             <thead>
                 <tr>
                     <th scope="col">S/N</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Category</th>
@@ -36,6 +37,11 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
 
                     <tr>
                         <th scope="row"><?php echo $key + 1 ?></th>
+
+                        <th scope="row"> 
+                            <img style="object-fit: cover;" height="60px" width="60px" src="<?php echo BASE_URL . '/assets/img/' .$post['image']?>" alt="<?php echo $post['title']?>">
+                        </th>
+
                         <td><?php echo $post['title'] ?></td>
 
                         <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>

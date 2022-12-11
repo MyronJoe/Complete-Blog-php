@@ -20,6 +20,8 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
             <h2>Edit Blog Post</h2>
         </div>
 
+        
+
         <form action="edit.php" method="POST" class="form" enctype="multipart/form-data" novalidate>
 
             <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
@@ -38,8 +40,11 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
                 <textarea class="form-control" id="description" value="" rows="3" name="body"><?php echo $body ?></textarea>
             </div>
 
+            <th scope="row"> 
+                <img style="object-fit: cover;" height="100px" width="100px" src="<?php echo BASE_URL . '/assets/img/' .$post_img?>" alt="<?php echo $title?>">
+            </th>
             <div class="form-group">
-                <label for="image">Image</label>
+                <label for="image">Update Image</label>
                 <input type="file" value="<?php echo $image ?>" class="form-control-file" id="image" name="image">
             </div>
 
