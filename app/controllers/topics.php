@@ -32,7 +32,6 @@
         $topic = selectOne($table, ['id' => $id]);
         $id = $topic['id'];
         $name = $topic['name'];
-        $description = $topic['description'];
         
     }
     if (isset($_GET['del_id'])) {
@@ -45,12 +44,12 @@
         exit();
     }
 
-    if (isset($_POST['edit-topic'])) {
+    if (isset($_POST['update-topic'])) {
         adminOnly();
         $errors = validateTopic($_POST, $errors);
         if (count($errors) === 0) {
             $id = $_POST['id'];
-            unset($_POST['id'], $_POST['edit-topic']);
+            unset($_POST['id'], $_POST['update-topic']);
             $topic_id = update($table, $id,  $_POST);
             $_SESSION['message'] = 'Topic updated successfully';
             $_SESSION["type"] = "success";
@@ -59,7 +58,7 @@
         }else{
             $id = $_POST["id"];
             $name = $_POST["name"];
-            $description = $_POST["description"];
+
         }
     }
 ?>
