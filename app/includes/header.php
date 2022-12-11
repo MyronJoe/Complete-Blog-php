@@ -78,7 +78,7 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 									<div class="dropdown-body">
 										<ul class="dropdown-list">
 											<?php if($_SESSION['admin']): ?>
-												<li><a href="category.html">Dashboard</a></li>
+												<li><a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
 											<?php endif; ?>
 											<li><a href="profile.php?user_id=<?php echo $_SESSION['id']; ?>" >Profile</a></li>
 											<li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
