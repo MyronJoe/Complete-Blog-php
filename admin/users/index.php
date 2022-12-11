@@ -3,6 +3,7 @@
 require_once '../../path.php';
 require_once(ROOT_PATH . '/admin/includes/adminheader.php');
 require_once(ROOT_PATH . '/app/controllers/users.php');
+require_once(ROOT_PATH . "/app/includes/session.php");
 // adminOnly();
 ?>
 <section style="display: flex;">
@@ -43,9 +44,9 @@ require_once(ROOT_PATH . '/app/controllers/users.php');
                         <td><?php echo $user['username'] ?></td>
                         <td><?php echo $user['email'] ?></td>
                         <td>
-                            <a href="edit.php?id=<?php echo $user['id'] ?>" class="btn btn-sm btn-primary mr-1">Edit</a>
+                            <a href="edit.php?user_id=<?php echo $user['id'] ?>" class="btn btn-sm btn-primary mr-1">Edit</a>
 
-                            <a href="index.php?del_id=<?php echo $id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure...?')">Delete</a>
+                            <a href="index.php?del_id=<?php echo $id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete user...?')">Delete</a>
 
                         </td>
                     </tr>

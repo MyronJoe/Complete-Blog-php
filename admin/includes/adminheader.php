@@ -1,5 +1,7 @@
-<?php
-// session_start()
+<?php 
+    // require_once '../../path.php';
+    require_once(ROOT_PATH . "/app/includes/session.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +61,8 @@
         .handler:hover .submenu ul {
             display: block;
         }
+
+        
     </style>
 </head>
 
