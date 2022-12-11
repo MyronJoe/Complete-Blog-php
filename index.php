@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+	include 'path.php';
+	include ROOT_PATH . "/app/database/db.php";
+
+	$posts = selectAll('posts', ['published' => 1]);
+
+
+?>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,9 +52,18 @@
 			right: 0;
 			top: 120px;
 		}
+		.sm-img img{
+			height: 250px;
+			width: 100%;
+			object-fit: cover;
+		}
+		.md-img img{
+			height: 507px;
+			width: 100%;
+			object-fit: cover;
+		}
 	</style>
 	<?php
-	require_once 'path.php';
 	include(ROOT_PATH . "/app/includes/css.php");
 
 	?>
@@ -68,53 +86,50 @@
 			<div id="hot-post" class="row hot-post">
 				<div class="col-md-8 hot-post-left">
 					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="assets//img/hot-post-1.jpg" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
+					<?php foreach ($posts as $key => $post) : ?>
+						<?php if ($key < 1) : ?>
+							<div class="post post-thumb">
+								<a class="post-img md-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+								<div class="post-body">
+									<div class="post-category">
+										<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+										<a href="category.html"><?php echo $topic['name'] ?></a>
+									</div>
+									<h3 class="post-title title-lg"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+									<ul class="post-meta">
+										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+										<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+										<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+									</ul>
+								</div>
 							</div>
-							<h3 class="post-title title-lg"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
-						</div>
-					</div>
+						<?php endif; ?>
+					<?php endforeach; ?>
 					<!-- /post -->
 				</div>
+
+
 				<div class="col-md-4 hot-post-right">
 					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="assets/img/hot-post-2.jpg" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
+					<?php foreach ($posts as $key => $post) : ?>
+						<?php if ($key >= 1 && $key <= 2) : ?>
+						<div class="post post-thumb">
+							<a class="post-img sm-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+							<div class="post-body">
+								<div class="post-category">
+									<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+									<a href="category.html"><?php echo $topic['name'] ?></a>
+								</div>
+								<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+								<ul class="post-meta">
+									<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+									<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+									<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+								</ul>
 							</div>
-							<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
 						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="assets/img/hot-post-3.jpg" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Fashion</a>
-								<a href="category.html">Lifestyle</a>
-							</div>
-							<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
-						</div>
-					</div>
+						<?php endif; ?>
+					<?php endforeach; ?>
 					<!-- /post -->
 				</div>
 			</div>

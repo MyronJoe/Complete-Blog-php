@@ -21,29 +21,33 @@
         $stmt->execute();
         return $stmt;
     }
-
+ 
+    
     // function that select from db and also checks conditions to select
     function selectAll($table, $conditions = []){
         global $conn;
         $sql = "SELECT * FROM $table";
+    
         if (empty($conditions)) {
+            $sql = "SELECT * FROM $table";
             $stmt = $conn->prepare($sql . " ORDER BY id DESC");
             $stmt->execute();
             $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
             return $records;
-        }else{
+        }else {
             $i = 0;
-            
-            foreach ($conditions as $key => $value) {
-
+            foreach($conditions as $key => $value){
                 if ($i === 0) {
                     $sql = $sql . " WHERE $key = ?";
                 }else{
-                    $sql = $sql . " AND $key =  ?";
+                    $sql = $sql . " AND $key = ?";
                 }
                 $i++;
             }
-            
+    
+            // dump($sql);
+    
+            $sql = $sql . " ORDER BY id DESC";
             $stmt = executeQuery($sql, $conditions);
             $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
             return $records;
