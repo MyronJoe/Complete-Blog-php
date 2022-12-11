@@ -7,6 +7,9 @@
 
 	$posts = selectAll('posts', ['published' => 1]);
 
+	$entertainment = selectOne('topics', ['name' => 'Entertainment']);
+
+
 
 ?>
 
@@ -59,6 +62,11 @@
 		}
 		.md-img img{
 			height: 507px;
+			width: 100%;
+			object-fit: cover;
+		}
+		.sm-sm img{
+			height: 90px;
 			width: 100%;
 			object-fit: cover;
 		}
@@ -157,102 +165,50 @@
 						<div class="row">
 							<div class="col-md-6" style="padding:0 2em">
 								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-1.jpg" alt=""></a>
-									<div class="post-body">
+								<?php foreach ($posts as $key => $post) : ?>
+									<?php if ($key < 4) : ?>
+									<div class="post post-widget">
+										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+										<div class="post-body">
 										<div class="post-category">
-											<a href="category.html">Travel</a>
+											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+											<a href="category.html"><?php echo $topic['name'] ?></a>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
+											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+											<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 										</ul>
 									</div>
-								</div>
+									</div>
+									<?php endif; ?>
+								<?php endforeach; ?>
 								<!-- /post -->
 
-								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-category">
-											<a href="category.html">Technology</a>
-											<a href="category.html">Lifestyle</a>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
-										</ul>
-									</div>
-								</div>
-								<!-- /post -->
-
-								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-3.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-category">
-											<a href="category.html">Lifestyle</a>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
-										</ul>
-									</div>
-								</div>
-								<!-- /post -->
 							</div>
 
 							<div class="col-md-6" style="padding:0 2em">
 								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-8.jpg" alt=""></a>
-									<div class="post-body">
+								<?php foreach ($posts as $key => $post) : ?>
+									<?php if ($key >= 4 && $key <= 8) : ?>
+									<div class="post post-widget">
+										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+										<div class="post-body">
 										<div class="post-category">
-											<a href="category.html">Travel</a>
+											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+											<a href="category.html"><?php echo $topic['name'] ?></a>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
+											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+											<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 										</ul>
 									</div>
-								</div>
-								<!-- /post -->
-
-								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-9.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-category">
-											<a href="category.html">Technology</a>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
-										</ul>
 									</div>
-								</div>
-								<!-- /post -->
-
-								<!-- post -->
-								<div class="post post-widget">
-									<a class="post-img" href="blog-post.html"><img src="assets/img/widget-10.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-category">
-											<a href="category.html">Lifestyle</a>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-										<ul class="post-meta">
-											<li><a href="author.html">John Doe</a></li>
-											<li>20 April 2018</li>
-										</ul>
-									</div>
-								</div>
+									<?php endif; ?>
+								<?php endforeach; ?>
 								<!-- /post -->
 							</div>
 						</div>
