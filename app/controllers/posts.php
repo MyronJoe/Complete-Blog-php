@@ -57,13 +57,13 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
 
 //add post funtinality
 if(isset($_POST['post-btn'])){
-    adminOnly();
-    // dump($_FILES['image']);
+    // adminOnly();
+
     $errors = validatePost($_POST, $errors);
     //image upload
     if (!empty($_FILES['image']['name'])) {
         $imageName = time() ."_". $_FILES['image']['name'];
-        $destination = ROOT_PATH . '/assets/images/' . $imageName;
+        $destination = ROOT_PATH . '/assets/img/' . $imageName;
 
         $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
 

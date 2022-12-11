@@ -2,7 +2,7 @@
 <?php
 require_once '../../path.php';
 require_once(ROOT_PATH . '/admin/includes/adminheader.php');
-require_once(ROOT_PATH . '/app/controllers/post.php');
+require_once(ROOT_PATH . '/app/controllers/posts.php');
 adminOnly();
 ?>
 <section style="display: flex;">
@@ -25,8 +25,8 @@ adminOnly();
                 <tr>
                     <th scope="col">S/N</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Category</th>
-                    <th scope="col">Section</th>
                     <th scope="col">Action</th>
                     <th scope="col">State</th>
                 </tr>
@@ -37,15 +37,13 @@ adminOnly();
                     <tr>
                         <th scope="row"><?php echo $key + 1 ?></th>
                         <td><?php echo $post['title'] ?></td>
-                        <td><?php echo $post['category'] ?></td>
 
-                        <td>
-                            <?php if ($post['blog'] && $post['blog'] == 1) : ?>
-                                <p>Blog</p>
-                            <?php else : ?>
-                                <p>Project</p>
-                            <?php endif; ?>
-                        </td>
+                        <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                        <td><?php echo $author['username'] ?></td>
+                        
+                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+                        <td><?php echo $topic['name'] ?></td>
+                        
 
                         <td>
                             <a href="edit.php?id=<?php echo $post['id'] ?>" class="btn btn-sm btn-primary mr-1">Edit</a>

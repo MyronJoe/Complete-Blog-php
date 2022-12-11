@@ -2,7 +2,7 @@
 <?php
 require_once '../../path.php';
 require_once(ROOT_PATH . '/admin/includes/adminheader.php');
-require_once(ROOT_PATH . '/app/controllers/post.php');
+require_once(ROOT_PATH . '/app/controllers/posts.php');
 adminOnly();
 ?>
 <section style="display: flex;">
@@ -20,73 +20,54 @@ adminOnly();
             <h2>Add Blog Post</h2>
         </div>
 
-        <form action="create.php" method="POST" class="pb-3" enctype="multipart/form-data">
-            <div class="table">
-                <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
-            </div>
-            <div class="row table">
+        <form action="create.php" method="POST" class="form" novalidate enctype="multipart/form-data">
 
-                <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                        <input type="text" name="title" value="<?php echo $title ?>" class="form-control" placeholder="Title" />
-                    </div>
-                </div>
+        <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
 
-                <div class="col-md-12 mb-3">
-                    <textarea class="form-control" placeholder="Content" id="editor1" value="" value="" name="content"><?php echo $content ?></textarea>
-                </div>
+        <div class="form-group">
+          <label for="post">Title</label>
+          <input type="text" class="form-control" value="<?php echo $title ?>" id="post" name="title">
+        </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                </div>
+        <div class="form-group">
+          <label for="description">Content</label>
+          <textarea class="form-control" id="description" value="" rows="3" name="body"><?php echo $body ?></textarea>
+        </div>
 
-                <div class="col-md-12 mb-3">
-                    <select name="category" id="category" class="form-control">
-                        <option value="<?php echo $category ?>"><?php echo $category ?></option>
-                        <option value="Web Design">Web Design</option>
-                        <option value="Graphics Design">Graphics Design</option>
-                        <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" class="form-control-file" id="image" name="image">
+        </div>
 
-                <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                        <input type="text" name="link" value="<?php echo $link ?>" class="form-control" placeholder="Link" />
-                    </div>
-                </div>
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <select name="topic_id" class="form-control" id="topic">
+            <option value=""></option>
+            <?php foreach ($topics as $key => $topic) : ?>
 
-                <?php if (isset($published) && $published == 1) : ?>
-                    <div class="form-group form-check col-md-12 mb-3 ml-3">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published" checked>
-                        <label class="form-check-label" for="exampleCheck1">Publish</label>
-                    </div>
-                <?php else : ?>
-                    <div class="form-group form-check col-md-12 mb-3 ml-3">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published">
-                        <label class="form-check-label" for="exampleCheck1">Publish</label>
-                    </div>
-                <?php endif; ?>
+              <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
+                <option selected value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
+              <?php else : ?>
+                <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
+              <?php endif; ?>
 
+            <?php endforeach ?>
 
-                <?php if (isset($blog) && $blog == 1) : ?>
-                    <div class="form-group form-check col-md-12 mb-3 ml-3">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2" name="blog" checked>
-                        <label class="form-check-label" for="exampleCheck2">Blog</label>
-                    </div>
-                <?php else : ?>
-                    <div class="form-group form-check col-md-12 mb-3 ml-3">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2" name="blog">
-                        <label class="form-check-label" for="exampleCheck2">Blog</label>
-                    </div>
-                <?php endif; ?>
+          </select>
+        </div>
 
-                <div class="col-md-12">
-                    <button type="submit" name="create-post" class="btn btn-primary py-2">Add Post</button>
-                </div>
+        <div class="form-group form-check">
+          <?php if (empty($published)) : ?>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published">
+            <label class="form-check-label" for="exampleCheck1">Publish</label>
+          <?php else : ?>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published" checked>
+            <label class="form-check-label" for="exampleCheck1">Publish</label>
+          <?php endif; ?>
+        </div>
 
-            </div>
-        </form>
+        <button type="submit" name="post-btn" class="btn btn-primary my-2">Add Post</button>
+      </form>
 
     </div>
 </section>
