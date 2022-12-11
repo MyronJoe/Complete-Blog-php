@@ -1,5 +1,6 @@
 <?php 
 require_once(ROOT_PATH . "/app/includes/session.php");
+
 ?>
 <header id="header">
 		<!-- NAV -->
@@ -55,7 +56,11 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 										<li><a href="author.html">Author page</a></li>
 										<li><a href="about.html">About Us</a></li>
 										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="<?php echo BASE_URL . '/register.php' ?>">Register</a></li>
+										<?php if(isset($_SESSION['id'])): ?>
+											<li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
+										<?php else: ?>
+											<li><a href="<?php echo BASE_URL . '/login.php' ?>">Login</a></li>
+										<?php endif; ?>
 									</ul>
 								</div>
 							</div>
@@ -66,18 +71,22 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 						<li><a href="#">Health</a></li>
 						<li><a href="#">Travel</a></li>
 
-						<li class="has-dropdown">
-							<a href="#"><?php echo $_SESSION['username']; ?></a>
-							<div class="dropdown">
-								<div class="dropdown-body">
-									<ul class="dropdown-list">
-										<li><a href="category.html">Dashboard</a></li>
-										<li><a href="contact.html">Profile</a></li>
-										<li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
-									</ul>
+						<?php if(isset($_SESSION['id'])): ?>
+							<li class="has-dropdown">
+								<a href="#"><?php echo $_SESSION['username']; ?></a>
+								<div class="dropdown">
+									<div class="dropdown-body">
+										<ul class="dropdown-list">
+											<?php if($_SESSION['admin']): ?>
+												<li><a href="category.html">Dashboard</a></li>
+											<?php endif; ?>
+											<li><a href="profile.php?user_id=<?php echo $_SESSION['id']; ?>" >Profile</a></li>
+											<li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-						</li>
+							</li>
+						<?php endif; ?>
 					</ul>
 					<!-- /nav -->
 				</div>

@@ -116,38 +116,101 @@
         $admin = $user['admin'];
     }
 
-    // edit admin user
-    if (isset($_POST['update-user'])) {
+    if(isset($_GET['user_id'])) {
+        $user = selectOne('users', ["id" => $_GET['user_id']]);
+        $id = $user['id'];
+        $username = $user['username'];
+        $email = $user['email'];
+        $admin = $user['admin'];
+        $user_image = $user['profile_image'];
+    }
+
+
+    // // edit admin user
+    // if (isset($_POST['update-user'])) {
+    //     // adminOnly();
+    //     $errors = validateUser($_POST, $errors);
+        
+
+    //     if (count($errors) === 0) {
+    //         $id = $_POST['id'];
+    //         unset($_POST['update-user'], $_POST['id'], $_POST['passwordconfirm']);
+    //         $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+            
+    //         $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
+    //         $count = update($table, $id, $_POST);
+    //         $_SESSION['message'] = "Admin user Updated successfully";
+    //         $_SESSION['type'] = "success";
+    //         header("location: " . BASE_URL . "/admin/users/index.php");
+    //         exit();
+           
+
+    //     }else{
+
+    //         $username = $_POST["username"];
+    //         $email = $_POST["email"];
+    //         $password = $_POST["password"];
+    //         $confirmpass = $_POST["passwordconfirm"];
+    //         $admin = isset($_POST['admin']) ? 1 : 0;
+    //     }
+
+    //     // dump($_POST);
+    // }
+
+    if (isset($_POST['updateUser'])) {
         // adminOnly();
+
         $errors = validateUser($_POST, $errors);
+
+        if (!empty($_FILES['profile_image']['name'])) {
+            $imageName = time() ."_". $_FILES['profile_image']['name'];
+            $destination = ROOT_PATH . '/assets/img/' . $imageName;
+    
+            $result = move_uploaded_file($_FILES['profile_image']['tmp_name'], $destination);
+    
+            if ($result) {
+                $_POST['profile_image'] = $imageName;
+            }else{
+                array_push($errors, 'Image failed to upload');
+            }
+    
+        }else{
+
+            $id = $_POST['id'];
+            $oneUser = selectOne('users', ["id" => $id]);
+            $_POST['profile_image'] = $oneUser['profile_image'];
+        }
         
 
         if (count($errors) === 0) {
             $id = $_POST['id'];
-            unset($_POST['update-user'], $_POST['id'], $_POST['passwordconfirm']);
+            
+            unset($_POST['passwordconfirm'], $_POST['id'], $_POST['updateUser']);
             $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-            
             $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
+            
+            // dump($_POST);
+
             $count = update($table, $id, $_POST);
-            $_SESSION['message'] = "Admin user Updated successfully";
+            $_SESSION['message'] = "User Profile Updated Successfully";
             $_SESSION['type'] = "success";
-            header("location: " . BASE_URL . "/admin/users/index.php");
+            header("location: " . BASE_URL . "/");
             exit();
-           
 
         }else{
 
-            $username = $_POST["username"];
-            $email = $_POST["email"];
             $password = $_POST["password"];
             $confirmpass = $_POST["passwordconfirm"];
             $admin = isset($_POST['admin']) ? 1 : 0;
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $user_image = $_POST['profile_image'];
         }
 
         // dump($_POST);
     }
-
 
 
 ?>
