@@ -116,7 +116,9 @@ if(isset($_POST['edit-post-btn'])){
         }
 
     }else{
-        array_push($errors, 'Image is required');
+        $post_id = $_POST['id'];
+        $onePost = selectOne($table, ['id' => $post_id]);
+        $_POST['image'] = $onePost['image'];
     }
 
     if (count($errors) == 0) {
