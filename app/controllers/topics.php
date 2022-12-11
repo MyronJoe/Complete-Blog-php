@@ -12,11 +12,11 @@
 
     $topics = selectAll($table);
 
-    if (isset($_POST['add-topic'])) {
+    if (isset($_POST['create-topic'])) {
         adminOnly();
         $errors = validateTopic($_POST, $errors);
         if (count($errors) === 0) {
-            unset($_POST['add-topic']);
+            unset($_POST['create-topic']);
             $topic_id = create($table, $_POST);
             $_SESSION['message'] = 'Topic created successfully';
             $_SESSION["type"] = "success";
@@ -24,7 +24,6 @@
             exit();
         }else{
             $name = $_POST["name"];
-            $description = $_POST["description"];
         }
     }
 

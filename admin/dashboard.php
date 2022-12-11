@@ -13,7 +13,7 @@ include(ROOT_PATH . "/app/controllers/users.php");
 
     <div class="rside">
         <div class="adduser-sec">
-            <h2>Myron - Portfolio - Dashboard</h2>
+            <h2>FrankNaija - Dashboard</h2>
 
 
         </div>
