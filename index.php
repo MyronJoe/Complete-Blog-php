@@ -103,18 +103,25 @@
 								<div class="post-body">
 									<div class="post-category">
 
-									<?php if ($post['topic_id']) : ?>
-										<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-									<?php else: ?>
-										<?php $topic['name'] = 'News';?>
-									<?php endif; ?>
+										<?php if ($post['topic_id']) : ?>
+											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+										<?php else: ?>
+											<?php $topic['name'] = 'News';?>
+										<?php endif; ?>
 
-										<a href="category.html"><?php echo $topic['name'] ?></a>
+										<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 									</div>
 									<h3 class="post-title title-lg"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 									<ul class="post-meta">
+
+									<?php if ($post['user_id']) : ?>
 										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-										<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+									<?php else: ?>
+										<?php $author['username'] = 'Frank';?>
+									<?php endif; ?>
+
+										
+										<li><a href=""><?php echo $author['username'] ?></a></li>
 										<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 									</ul>
 								</div>
@@ -140,12 +147,20 @@
 										<?php $topic['name'] = 'News';?>
 									<?php endif; ?>
 
-									<a href="category.html"><?php echo $topic['name'] ?></a>
+									<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 								</div>
 								<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 								<ul class="post-meta">
-									<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-									<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+
+
+									<?php if ($post['user_id']) : ?>
+										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+									<?php else: ?>
+										<?php $author['username'] = 'Frank';?>
+									<?php endif; ?>
+
+										
+										<li><a href="#"><?php echo $author['username'] ?></a></li>
 									<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 								</ul>
 							</div>
@@ -180,7 +195,7 @@
 							<div class="col-md-6" style="padding:0 2em">
 								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
-									<?php if ($key < 4) : ?>
+									<?php if ($key < 8) : ?>
 									<div class="post post-widget">
 										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 										<div class="post-body">
@@ -192,12 +207,19 @@
 												<?php $topic['name'] = 'News';?>
 											<?php endif; ?>
 
-											<a href="category.html"><?php echo $topic['name'] ?></a>
+											<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 										</div>
 										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 										<ul class="post-meta">
+
+										<?php if ($post['user_id']) : ?>
 											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-											<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+										<?php else: ?>
+											<?php $author['username'] = 'Frank';?>
+										<?php endif; ?>
+
+											
+											<li><a href="#"><?php echo $author['username'] ?></a></li>
 											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 										</ul>
 									</div>
@@ -211,7 +233,7 @@
 							<div class="col-md-6" style="padding:0 2em">
 								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
-									<?php if ($key >= 4 && $key <= 8) : ?>
+									<?php if ($key >= 8 && $key <= 16) : ?>
 									<div class="post post-widget">
 										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 										<div class="post-body">
@@ -224,12 +246,20 @@
 												<?php $topic['name'] = 'News';?>
 											<?php endif; ?>
 									
-											<a href="category.html"><?php echo $topic['name'] ?></a>
+											<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 										</div>
 										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 										<ul class="post-meta">
-											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-											<li><a href="author.html"><?php echo $author['username'] ?></a></li>
+
+
+											<?php if ($post['user_id']) : ?>
+												<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+											<?php else: ?>
+												<?php $author['username'] = 'Frank';?>
+											<?php endif; ?>
+
+											
+											<li><a href="#"><?php echo $author['username'] ?></a></li>
 											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 										</ul>
 									</div>
@@ -242,69 +272,6 @@
 					</div>
 					<!-- /row -->
 
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12">
-							<div class="section-title">
-								<h2 class="title">Fashion & Travel</h2>
-							</div>
-						</div>
-						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-10.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Travel</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-12.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Lifestyle</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-13.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Travel</a>
-										<a href="category.html">Lifestyle</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
-					</div>
-					<!-- /row -->
 
 					<!-- row -->
 					<div class="row">
@@ -323,7 +290,7 @@
 									</div>
 									<h3 class="post-title title-sm"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
 									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
+										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>
 									</ul>
 								</div>
@@ -341,7 +308,7 @@
 									</div>
 									<h3 class="post-title title-sm"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
 									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
+										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>
 									</ul>
 								</div>
@@ -359,7 +326,7 @@
 									</div>
 									<h3 class="post-title title-sm"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
 									<ul class="post-meta">
-										<li><a href="author.html">John Doe</a></li>
+										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>
 									</ul>
 								</div>

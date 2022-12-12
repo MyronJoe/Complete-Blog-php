@@ -47,52 +47,26 @@
         <h2 class="title">Popular Posts</h2>
     </div>
     <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="assets/img/widget-3.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Lifestyle</a>
+    <?php foreach ($posts as $key => $post) : ?>
+        <?php if ($key > 7) : ?>
+            <div class="post post-widget">
+                <a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+                <div class="post-body">
+                    <div class="post-category">
+                        <?php if ($post['topic_id']) : ?>
+                            <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+                        <?php else: ?>
+                            <?php $topic['name'] = 'News';?>
+                        <?php endif; ?>
+
+                        <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+                    </div>
+                    <h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+                </div>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-        </div>
-    </div>
+        <?php endif; ?>
+	<?php endforeach; ?>
     <!-- /post -->
 
-    <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="assets/img/widget-2.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Technology</a>
-                <a href="category.html">Lifestyle</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-        </div>
-    </div>
-    <!-- /post -->
-
-    <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="assets/img/widget-4.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Health</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-        </div>
-    </div>
-    <!-- /post -->
-
-    <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="assets/img/widget-5.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Health</a>
-                <a href="category.html">Lifestyle</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-        </div>
-    </div>
-    <!-- /post -->
+    
 </div>
