@@ -47,7 +47,12 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
                         <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
                         <td><?php echo $author['username'] ?></td>
                         
-                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+
+                        <?php if ($post['topic_id']) : ?>
+                            <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+                        <?php else: ?>
+                            <?php $topic['name'] = 'News';?>
+                        <?php endif; ?>
                         <td><?php echo $topic['name'] ?></td>
                         
 

@@ -46,6 +46,7 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
             <?php foreach ($topics as $key => $topic) : ?>
 
               <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
+                
                 <option selected value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
               <?php else : ?>
                 <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>

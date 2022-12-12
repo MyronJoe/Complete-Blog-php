@@ -100,7 +100,13 @@
 								<a class="post-img md-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
+
+									<?php if ($post['topic_id']) : ?>
 										<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+									<?php else: ?>
+										<?php $topic['name'] = 'News';?>
+									<?php endif; ?>
+
 										<a href="category.html"><?php echo $topic['name'] ?></a>
 									</div>
 									<h3 class="post-title title-lg"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
@@ -125,7 +131,13 @@
 							<a class="post-img sm-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-category">
-									<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+
+									<?php if ($post['topic_id']) : ?>
+										<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+									<?php else: ?>
+										<?php $topic['name'] = 'News';?>
+									<?php endif; ?>
+
 									<a href="category.html"><?php echo $topic['name'] ?></a>
 								</div>
 								<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
@@ -171,7 +183,13 @@
 										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 										<div class="post-body">
 										<div class="post-category">
-											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+
+											<?php if ($post['topic_id']) : ?>
+												<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+											<?php else: ?>
+												<?php $topic['name'] = 'News';?>
+											<?php endif; ?>
+
 											<a href="category.html"><?php echo $topic['name'] ?></a>
 										</div>
 										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
@@ -196,7 +214,14 @@
 										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 										<div class="post-body">
 										<div class="post-category">
-											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+
+
+											<?php if ($post['topic_id']) : ?>
+												<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+											<?php else: ?>
+												<?php $topic['name'] = 'News';?>
+											<?php endif; ?>
+									
 											<a href="category.html"><?php echo $topic['name'] ?></a>
 										</div>
 										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
