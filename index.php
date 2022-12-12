@@ -7,6 +7,8 @@
 
 	$posts = selectAll('posts', ['published' => 1]);
 
+	$getAllTopics = selectAll('topics');
+
 	$entertainment = selectOne('topics', ['name' => 'Entertainment']);
 
 

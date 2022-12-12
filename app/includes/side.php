@@ -4,11 +4,15 @@
     </div>
     <div class="category-widget">
         <ul>
-            <li><a href="#">Lifestyle <span>451</span></a></li>
-            <li><a href="#">Fashion <span>230</span></a></li>
+            <?php foreach ($getAllTopics as $key => $topics) : ?>
+                <?php if ($key < 7) : ?>
+                    <li><a href="<?php echo BASE_URL . '/category.php?t_id=' . $topics['id'] ?>"><?php echo $topics['name'] ?> <span>230</span></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <!-- <li><a href="#">Lifestyle <span>451</span></a></li>
             <li><a href="#">Technology <span>40</span></a></li>
             <li><a href="#">Travel <span>38</span></a></li>
-            <li><a href="#">Health <span>24</span></a></li>
+            <li><a href="#">Health <span>24</span></a></li> -->
         </ul>
     </div>
 </div>
