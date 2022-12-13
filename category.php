@@ -10,7 +10,7 @@ $getAllTopics = selectAll('topics');
 if (isset($_GET['t_id'])) {
 
     $posts = selectAll('posts', ['published' => 1]);
-    
+
     $all_posts = selectAll('posts', ['topic_id' => $_GET['t_id']]);
 
     $category = selectOne('topics', ['id' => $_GET['t_id']]);
@@ -33,19 +33,20 @@ if (isset($_GET['t_id'])) {
     include(ROOT_PATH . "/app/includes/css.php");
 
     ?>
-    <title>Category: <?php echo $category['name'];?></title>
+    <title>Category: <?php echo $category['name']; ?></title>
 
     <style>
-        .sm-img img{
-			height: 150px;
-			width: 100%;
-			object-fit: cover;
-		}
-        .sm-sm img{
-			height: 90px;
-			width: 100%;
-			object-fit: cover;
-		}
+        .sm-img img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .sm-sm img {
+            height: 90px;
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
 
 </head>
@@ -62,7 +63,7 @@ if (isset($_GET['t_id'])) {
         <div class="container">
             <!-- row -->
             <div class="row">
-                <h2 style="margin-left: 15px ;">Category: <?php echo $category['name'];?></h2>
+                <h2 style="margin-left: 15px ;">Category: <?php echo $category['name']; ?></h2>
                 <div class="col-md-8">
 
                     <?php foreach ($all_posts as $key => $post) : ?>
@@ -74,8 +75,8 @@ if (isset($_GET['t_id'])) {
 
                                     <?php if ($post['topic_id']) : ?>
                                         <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-                                    <?php else: ?>
-                                        <?php $topic['name'] = 'News';?>
+                                    <?php else : ?>
+                                        <?php $topic['name'] = 'News'; ?>
                                     <?php endif; ?>
 
                                     <a href=""><?php echo $topic['name'] ?></a>
@@ -86,13 +87,13 @@ if (isset($_GET['t_id'])) {
 
 
                                     <?php if ($post['user_id']) : ?>
-										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-									<?php else: ?>
-										<?php $author['username'] = 'Frank';?>
-									<?php endif; ?>
+                                        <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                                    <?php else : ?>
+                                        <?php $author['username'] = 'Frank'; ?>
+                                    <?php endif; ?>
 
-										
-										<li><a href=""><?php echo $author['username'] ?></a></li>
+
+                                    <li><a href=""><?php echo $author['username'] ?></a></li>
                                     <li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
                                 </ul>
                                 <p><?php echo substr($post['body'], 0, 120) . '...' ?></p>
@@ -105,7 +106,7 @@ if (isset($_GET['t_id'])) {
 
                 <div class="col-md-4 sidebar">
                     <!-- ad widget-->
-                        <?php include(ROOT_PATH . "/app/includes/side.php"); ?>
+                    <?php include(ROOT_PATH . "/app/includes/side.php"); ?>
                     <!-- /Ad widget -->
                 </div>
             </div>
