@@ -14,47 +14,54 @@
     <title>FrankNaija - Update</title>
 
     <style>
-        .form-g{
+        .form-g {
             background-color: #fff;
             box-shadow: 2px 2px 5px #ddd;
             padding: 1em 2em;
         }
-        .form-control{
+
+        .form-control {
             border-radius: 0 !important;
             padding: 20px !important;
             margin-bottom: 10px !important;
         }
-        .top h4{
+
+        .top h4 {
             background-color: #242424;
             color: white;
             text-align: center;
             padding: .6em;
             margin: 0 !important;
         }
-        .btn{
+
+        .btn {
             background-color: #242424;
             color: white;
             border-radius: 0 !important;
         }
-        .btn:hover{
+
+        .btn:hover {
             color: orangered !important;
             border-radius: 0 !important;
         }
+
         .form-error {
             background-color: #ffb9d1;
             padding: 10px 10px 0px 10px;
             border: 2px solid #491217;
             margin-bottom: 1em;
         }
-        .image-sec img{
+
+        .image-sec img {
             height: 150px;
             width: 150px;
             border-radius: 100%;
             margin-bottom: 1.5em;
             object-fit: cover;
         }
+
         @media screen and (min-width:800px) {
-            .container{
+            .container {
                 width: 70%;
             }
         }
@@ -68,15 +75,15 @@
     <!-- /HEADER -->
 
     <div class="container" style=" margin:2em auto;">
-        
+
         <div class="image-sec">
 
-        <img src="<?php echo BASE_URL . '/assets/img/' .$user_image?>" alt="<?php echo $username?>">
+            <img src="<?php echo BASE_URL . '/assets/img/' . $user_image ?>" alt="<?php echo $username ?>">
 
         </div>
 
-        <div >
-            <div class="form " >
+        <div>
+            <div class="form ">
                 <div class="top">
                     <h4>Update Profile of <?php echo $username ?></h4>
                 </div>
@@ -86,8 +93,7 @@
                     <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
 
                     <div>
-                        <input type="hidden" class="form-control" value="<?php echo $id ?>" 
-                         name="id">
+                        <input type="hidden" class="form-control" value="<?php echo $id ?>" name="id">
                     </div>
 
                     <div>
@@ -103,7 +109,7 @@
 
                     <div>
                         <label for="Password">Password *</label>
-                        <input type="password" class="form-control"  value="<?php echo $password ?>" id="Password" name="password">
+                        <input type="password" class="form-control" value="<?php echo $password ?>" id="Password" name="password">
                     </div>
 
                     <div>
@@ -113,7 +119,7 @@
 
                     <div class="mb-3">
                         <label for="pid">Update Profile Picture</label>
-                        <input type="file"   name="profile_image" id="pic">
+                        <input type="file" name="profile_image" id="pic">
                     </div><br>
 
                     <div class="form-group mb-0">
