@@ -2,16 +2,14 @@
 <html lang="en">
 
 <?php
-	include 'path.php';
-	include ROOT_PATH . "/app/database/db.php";
+include 'path.php';
+include ROOT_PATH . "/app/database/db.php";
 
-	$posts = selectAll('posts', ['published' => 1]);
+$posts = selectAll('posts', ['published' => 1]);
 
-	$getAllTopics = selectAll('topics');
+$getAllTopics = selectAll('topics');
 
-	$entertainment = selectOne('topics', ['name' => 'Entertainment']);
-
-
+$entertainment = selectOne('topics', ['name' => 'Entertainment']);
 
 ?>
 
@@ -57,17 +55,20 @@
 			right: 0;
 			top: 120px;
 		}
-		.sm-img img{
+
+		.sm-img img {
 			height: 250px;
 			width: 100%;
 			object-fit: cover;
 		}
-		.md-img img{
+
+		.md-img img {
 			height: 507px;
 			width: 100%;
 			object-fit: cover;
 		}
-		.sm-sm img{
+
+		.sm-sm img {
 			height: 90px;
 			width: 100%;
 			object-fit: cover;
@@ -105,8 +106,8 @@
 
 										<?php if ($post['topic_id']) : ?>
 											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-										<?php else: ?>
-											<?php $topic['name'] = 'News';?>
+										<?php else : ?>
+											<?php $topic['name'] = 'News'; ?>
 										<?php endif; ?>
 
 										<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
@@ -114,13 +115,13 @@
 									<h3 class="post-title title-lg"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
 									<ul class="post-meta">
 
-									<?php if ($post['user_id']) : ?>
-										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-									<?php else: ?>
-										<?php $author['username'] = 'Frank';?>
-									<?php endif; ?>
+										<?php if ($post['user_id']) : ?>
+											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+										<?php else : ?>
+											<?php $author['username'] = 'Frank'; ?>
+										<?php endif; ?>
 
-										
+
 										<li><a href=""><?php echo $author['username'] ?></a></li>
 										<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
 									</ul>
@@ -136,35 +137,35 @@
 					<!-- post -->
 					<?php foreach ($posts as $key => $post) : ?>
 						<?php if ($key >= 1 && $key <= 2) : ?>
-						<div class="post post-thumb">
-							<a class="post-img sm-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
+							<div class="post post-thumb">
+								<a class="post-img sm-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+								<div class="post-body">
+									<div class="post-category">
 
-									<?php if ($post['topic_id']) : ?>
-										<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-									<?php else: ?>
-										<?php $topic['name'] = 'News';?>
-									<?php endif; ?>
+										<?php if ($post['topic_id']) : ?>
+											<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+										<?php else : ?>
+											<?php $topic['name'] = 'News'; ?>
+										<?php endif; ?>
 
-									<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
-								<ul class="post-meta">
+										<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+									</div>
+									<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+									<ul class="post-meta">
 
 
-									<?php if ($post['user_id']) : ?>
-										<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-									<?php else: ?>
-										<?php $author['username'] = 'Frank';?>
-									<?php endif; ?>
+										<?php if ($post['user_id']) : ?>
+											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+										<?php else : ?>
+											<?php $author['username'] = 'Frank'; ?>
+										<?php endif; ?>
 
-										
+
 										<li><a href="#"><?php echo $author['username'] ?></a></li>
-									<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
-								</ul>
+										<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+									</ul>
+								</div>
 							</div>
-						</div>
 						<?php endif; ?>
 					<?php endforeach; ?>
 					<!-- /post -->
@@ -196,34 +197,34 @@
 								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key < 8) : ?>
-									<div class="post post-widget">
-										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
-										<div class="post-body">
-										<div class="post-category">
+										<div class="post post-widget">
+											<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+											<div class="post-body">
+												<div class="post-category">
 
-											<?php if ($post['topic_id']) : ?>
-												<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-											<?php else: ?>
-												<?php $topic['name'] = 'News';?>
-											<?php endif; ?>
+													<?php if ($post['topic_id']) : ?>
+														<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+													<?php else : ?>
+														<?php $topic['name'] = 'News'; ?>
+													<?php endif; ?>
 
-											<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+													<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+												</div>
+												<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+												<ul class="post-meta">
+
+													<?php if ($post['user_id']) : ?>
+														<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+													<?php else : ?>
+														<?php $author['username'] = 'Frank'; ?>
+													<?php endif; ?>
+
+
+													<li><a href="#"><?php echo $author['username'] ?></a></li>
+													<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+												</ul>
+											</div>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
-										<ul class="post-meta">
-
-										<?php if ($post['user_id']) : ?>
-											<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-										<?php else: ?>
-											<?php $author['username'] = 'Frank';?>
-										<?php endif; ?>
-
-											
-											<li><a href="#"><?php echo $author['username'] ?></a></li>
-											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
-										</ul>
-									</div>
-									</div>
 									<?php endif; ?>
 								<?php endforeach; ?>
 								<!-- /post -->
@@ -234,36 +235,36 @@
 								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key >= 8 && $key <= 16) : ?>
-									<div class="post post-widget">
-										<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
-										<div class="post-body">
-										<div class="post-category">
+										<div class="post post-widget">
+											<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+											<div class="post-body">
+												<div class="post-category">
 
 
-											<?php if ($post['topic_id']) : ?>
-												<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-											<?php else: ?>
-												<?php $topic['name'] = 'News';?>
-											<?php endif; ?>
-									
-											<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+													<?php if ($post['topic_id']) : ?>
+														<?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+													<?php else : ?>
+														<?php $topic['name'] = 'News'; ?>
+													<?php endif; ?>
+
+													<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+												</div>
+												<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+												<ul class="post-meta">
+
+
+													<?php if ($post['user_id']) : ?>
+														<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+													<?php else : ?>
+														<?php $author['username'] = 'Frank'; ?>
+													<?php endif; ?>
+
+
+													<li><a href="#"><?php echo $author['username'] ?></a></li>
+													<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+												</ul>
+											</div>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
-										<ul class="post-meta">
-
-
-											<?php if ($post['user_id']) : ?>
-												<?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-											<?php else: ?>
-												<?php $author['username'] = 'Frank';?>
-											<?php endif; ?>
-
-											
-											<li><a href="#"><?php echo $author['username'] ?></a></li>
-											<li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
-										</ul>
-									</div>
-									</div>
 									<?php endif; ?>
 								<?php endforeach; ?>
 								<!-- /post -->
@@ -339,7 +340,7 @@
 
 				<div class="col-md-4 side-bar">
 					<!-- category widget -->
-						<?php include(ROOT_PATH . "/app/includes/side.php"); ?>
+					<?php include(ROOT_PATH . "/app/includes/side.php"); ?>
 					<!-- /post widget -->
 				</div>
 			</div>
