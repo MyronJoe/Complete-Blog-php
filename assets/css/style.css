@@ -1,5 +1,3 @@
-
-
 /*----------------------------*\
 	typography
 \*----------------------------*/
@@ -21,7 +19,12 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   color: #11151c;
   font-weight: 700;
@@ -56,7 +59,8 @@ a {
   transition: 0.2s color;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: #ee4266;
   text-decoration: none;
   outline: none;
@@ -72,13 +76,15 @@ a:hover, a:focus {
   color: #FFF;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none
 }
 
-ul.list-style, ol.list-style {
+ul.list-style,
+ol.list-style {
   padding-left: 15px;
   margin-bottom: 10px;
 }
@@ -204,7 +210,8 @@ textarea.input {
 	button
 \*----------------------------*/
 
-.primary-button, .secondary-button {
+.primary-button,
+.secondary-button {
   display: inline-block;
   padding: 10px 40px;
   border-radius: 2px;
@@ -230,12 +237,14 @@ textarea.input {
   box-shadow: 0px 0px 0px 2px #353535 inset;
 }
 
-.primary-button:hover, .primary-button:focus {
+.primary-button:hover,
+.primary-button:focus {
   background-color: transparent;
   color: #ee4266;
 }
 
-.secondary-button:hover, .secondary-button:focus {
+.secondary-button:hover,
+.secondary-button:focus {
   background-color: transparent;
   color: #353535;
 }
@@ -583,7 +592,8 @@ textarea.input {
   border-bottom: 1px solid #323335;
 }
 
-.nav-aside-menu li a:hover, .nav-aside-menu li a:focus {
+.nav-aside-menu li a:hover,
+.nav-aside-menu li a:focus {
   color: #ee4266;
 }
 
@@ -631,7 +641,8 @@ textarea.input {
   transform: translateX(-50%);
 }
 
-.nav-close span:before, .nav-close span:after {
+.nav-close span:before,
+.nav-close span:after {
   content: "";
   display: block;
   width: 30px;
@@ -781,7 +792,8 @@ textarea.input {
   font-weight: 700;
 }
 
-.post-meta li a:hover, .post-meta li a:focus {
+.post-meta li a:hover,
+.post-meta li a:focus {
   color: #ee4266;
 }
 
@@ -850,7 +862,8 @@ textarea.input {
   color: #fff;
 }
 
-.post.post-thumb .post-title a:hover, .post.post-thumb .post-title a:focus {
+.post.post-thumb .post-title a:hover,
+.post.post-thumb .post-title a:focus {
   color: #ee4266;
 }
 
@@ -862,7 +875,8 @@ textarea.input {
   color: #fff;
 }
 
-.post.post-thumb .post-meta li a:hover, .post.post-thumb .post-meta li a:focus {
+.post.post-thumb .post-meta li a:hover,
+.post.post-thumb .post-meta li a:focus {
   color: #ee4266;
 }
 
@@ -939,7 +953,8 @@ textarea.input {
   color: #fff;
 }
 
-.page-header .post-meta li a:hover, .page-header .post-meta li a:focus {
+.page-header .post-meta li a:hover,
+.page-header .post-meta li a:focus {
   color: #ee4266;
 }
 
@@ -1049,14 +1064,16 @@ textarea.input {
   margin-left: 15px;
 }
 
-.post-nav .next-post span, .post-nav .prev-post span {
+.post-nav .next-post span,
+.post-nav .prev-post span {
   font-weight: 700;
   color: #97989b;
   text-transform: uppercase;
   font-size: 12px;
 }
 
-.post-nav .next-post:after, .post-nav .prev-post:after {
+.post-nav .next-post:after,
+.post-nav .prev-post:after {
   content: '';
   display: table;
   clear: both;
@@ -1091,7 +1108,8 @@ textarea.input {
   color: #fff;
 }
 
-.page-header .author .author-social li a:hover, .page-header .author .author-social li a:focus {
+.page-header .author .author-social li a:hover,
+.page-header .author .author-social li a:focus {
   color: #ee4266;
 }
 
@@ -1306,7 +1324,8 @@ textarea.input {
   transition: 0.2s all;
 }
 
-.tags-widget ul li a:hover, .tags-widget ul li a:focus {
+.tags-widget ul li a:hover,
+.tags-widget ul li a:focus {
   color: #fff !important;
   background-color: #ee4266;
 }
@@ -1364,7 +1383,8 @@ textarea.input {
   color: #97989b;
 }
 
-#footer a:hover, #footer a:focus {
+#footer a:hover,
+#footer a:focus {
   color: #ee4266;
 }
 
@@ -1466,9 +1486,11 @@ textarea.input {
   #nav-bottom {
     display: none;
   }
+
   .nav-social {
     display: none;
   }
+
   .nav-logo {
     position: static;
     -webkit-transform: none;
@@ -1478,6 +1500,7 @@ textarea.input {
     display: inline-block;
     float: left;
   }
+
   .footer-nav {
     text-align: left;
     margin-bottom: 30px;
@@ -1488,25 +1511,30 @@ textarea.input {
   .page-header h1 {
     font-size: 32.437px;
   }
+
   .post-nav .prev-post {
     float: none;
     width: 100%;
     margin-bottom: 15px;
     padding-right: 0px;
   }
+
   .post-nav .prev-post:last-child {
     margin-bottom: 0px;
   }
+
   .post-nav .next-post {
     float: none;
     width: 100%;
   }
+
   .post-nav .next-post {
     float: none;
     width: 100%;
     padding-left: 0px;
     text-align: left;
   }
+
   .post-nav .next-post .post-img {
     margin-right: 15px;
     float: left;
