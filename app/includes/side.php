@@ -55,8 +55,8 @@
                     <div class="post-category">
                         <?php if ($post['topic_id']) : ?>
                             <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-                        <?php else: ?>
-                            <?php $topic['name'] = 'News';?>
+                        <?php else : ?>
+                            <?php $topic['name'] = 'News'; ?>
                         <?php endif; ?>
 
                         <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
@@ -65,8 +65,8 @@
                 </div>
             </div>
         <?php endif; ?>
-	<?php endforeach; ?>
+    <?php endforeach; ?>
     <!-- /post -->
 
-    
+
 </div>
