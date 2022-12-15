@@ -33,7 +33,7 @@ require_once(ROOT_PATH . '/app/controllers/topics.php');
 
         <div class="col-md-12 mb-3">
           <div class="form-group">
-            <input type="text" name="name" value="<?php echo $name ?>" class="form-control" id="name"  />
+            <input type="text" name="name" value="<?php echo $name ?>" class="form-control" id="name" />
           </div>
         </div>
 
