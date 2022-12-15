@@ -23,7 +23,7 @@ require_once(ROOT_PATH . '/app/controllers/topics.php');
         <form action="create.php" method="POST" class="pb-3">
 
             <div style="width:70% ; margin:auto;">
-            <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
+                <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
             </div>
 
             <div class="row table">
