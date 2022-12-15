@@ -38,28 +38,28 @@ require_once(ROOT_PATH . '/app/controllers/posts.php');
                     <tr>
                         <th scope="row"><?php echo $key + 1 ?></th>
 
-                        <th scope="row"> 
-                            <img style="object-fit: cover;" height="60px" width="60px" src="<?php echo BASE_URL . '/assets/img/' .$post['image']?>" alt="<?php echo $post['title']?>">
+                        <th scope="row">
+                            <img style="object-fit: cover;" height="60px" width="60px" src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt="<?php echo $post['title'] ?>">
                         </th>
 
                         <td><?php echo $post['title'] ?></td>
-                        
+
 
                         <?php if ($post['user_id']) : ?>
                             <?php $topic = selectOne('users', ['id' => $post['user_id']]) ?>
-                        <?php else: ?>
-                            <?php $topic['username'] = 'Frank';?>
+                        <?php else : ?>
+                            <?php $topic['username'] = 'Frank'; ?>
                         <?php endif; ?>
                         <td><?php echo $topic['username'] ?></td>
 
-                        
+
                         <?php if ($post['topic_id']) : ?>
                             <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-                        <?php else: ?>
-                            <?php $topic['name'] = 'News';?>
+                        <?php else : ?>
+                            <?php $topic['name'] = 'News'; ?>
                         <?php endif; ?>
                         <td><?php echo $topic['name'] ?></td>
-                        
+
 
                         <td>
                             <a href="edit.php?id=<?php echo $post['id'] ?>" class="btn btn-sm btn-primary mr-1">Edit</a>
