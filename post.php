@@ -64,7 +64,9 @@ $getAllTopics = selectAll('topics');
                     <div class="section-row">
                         <div class="post-share">
 
+
                             <a href="#"><i class="fa fa-user"></i><span>Email</span></a>
+                            
 
                             <?php if ($post['topic_id']) : ?>
                                 <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
@@ -77,7 +79,7 @@ $getAllTopics = selectAll('topics');
                             </a>
 
 
-                            <a href="#"><i class="fa fa-clock-o"></i><span>Email</span></a>
+                            <a><i class="fa fa-clock-o"></i><span><?php echo date('F j, Y', strtotime($post['created_at'])) ?></span></a>
                         </div>
                     </div>
                     <!-- /post share -->
