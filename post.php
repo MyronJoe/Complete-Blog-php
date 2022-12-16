@@ -37,16 +37,18 @@ $getAllTopics = selectAll('topics');
         .image-section {
             margin-bottom: 20px;
         }
-        .post-img img{
+
+        .post-img img {
             height: 200px;
             width: 100%;
             object-fit: cover;
         }
+
         .sm-sm img {
-			height: 90px;
-			width: 100%;
-			object-fit: cover;
-		}
+            height: 90px;
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
 
 </head>
@@ -87,9 +89,9 @@ $getAllTopics = selectAll('topics');
                             <?php if ($post['topic_id']) : ?>
                                 <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
                                 <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
-                                <i class="fa fa-tag"></i>
-                                <span><?php echo $topic['name'] ?></span>
-                            </a>
+                                    <i class="fa fa-tag"></i>
+                                    <span><?php echo $topic['name'] ?></span>
+                                </a>
                             <?php else : ?>
                                 <?php $topic['name'] = 'News'; ?>
                                 <a>
@@ -97,7 +99,7 @@ $getAllTopics = selectAll('topics');
                                     <span><?php echo $topic['name'] ?></span>
                                 </a>
                             <?php endif; ?>
-                            
+
 
 
                             <a><i class="fa fa-clock-o"></i><span><?php echo date('F j, Y', strtotime($post['created_at'])) ?></span></a>
@@ -118,8 +120,6 @@ $getAllTopics = selectAll('topics');
                     </div>
                     <!-- /post content -->
 
-
-
                     <!-- /related post -->
                     <div>
                         <div class="section-title">
@@ -137,19 +137,19 @@ $getAllTopics = selectAll('topics');
                                             <div class="post-body">
                                                 <div class="post-category">
 
-                                                <?php if ($post['topic_id']) : ?>
-                                                    <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
-                                                    <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
-                                                    <i class="fa fa-tag"></i>
-                                                    <span><?php echo $topic['name'] ?></span>
-                                                </a>
-                                                <?php else : ?>
-                                                    <?php $topic['name'] = 'News'; ?>
-                                                    <a>
-                                                        <i class="fa fa-tag"></i>
-                                                        <span><?php echo $topic['name'] ?></span>
-                                                    </a>
-                                                <?php endif; ?>
+                                                    <?php if ($post['topic_id']) : ?>
+                                                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
+                                                        <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
+                                                            <i class="fa fa-tag"></i>
+                                                            <span><?php echo $topic['name'] ?></span>
+                                                        </a>
+                                                    <?php else : ?>
+                                                        <?php $topic['name'] = 'News'; ?>
+                                                        <a>
+                                                            <i class="fa fa-tag"></i>
+                                                            <span><?php echo $topic['name'] ?></span>
+                                                        </a>
+                                                    <?php endif; ?>
                                                 </div>
                                                 <h3 class="post-title title-sm">
                                                     <a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">
@@ -157,11 +157,11 @@ $getAllTopics = selectAll('topics');
                                                     </a>
                                                 </h3>
                                                 <ul class="post-meta">
-                                                <?php if ($post['user_id']) : ?>
-                                                    <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
-                                                <?php else : ?>
-                                                    <?php $author['username'] = 'Frank'; ?>
-                                                <?php endif; ?>
+                                                    <?php if ($post['user_id']) : ?>
+                                                        <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                                                    <?php else : ?>
+                                                        <?php $author['username'] = 'Frank'; ?>
+                                                    <?php endif; ?>
 
                                                     <li><a><?php echo $author['username'] ?></a></li>
                                                     <li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
