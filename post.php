@@ -58,15 +58,20 @@ $getAllTopics = selectAll('topics');
                 <div class="col-md-8">
 
                     <div class="image-section">
-                        <img src="assets/img/1670786514_galery-2.jpg" alt="">
+                        <img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt="<?php echo $post['title'] ?>">
                     </div>
                     <!-- post share -->
                     <div class="section-row">
                         <div class="post-share">
 
+                            <?php if ($post['user_id']) : ?>
+                                <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                            <?php else : ?>
+                                <?php $author['username'] = 'Frank'; ?>
+                            <?php endif; ?>
 
-                            <a href="#"><i class="fa fa-user"></i><span>Email</span></a>
-                            
+                            <a><i class="fa fa-user"></i><span><?php echo $author['username'] ?></span></a>
+
 
                             <?php if ($post['topic_id']) : ?>
                                 <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
@@ -123,43 +128,6 @@ $getAllTopics = selectAll('topics');
                             </div>
                             <!-- /post -->
 
-                            <!-- post -->
-                            <div class="col-md-4">
-                                <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
-                                    <div class="post-body">
-                                        <div class="post-category">
-                                            <a href="category.html">Fashion</a>
-                                            <a href="category.html">Lifestyle</a>
-                                        </div>
-                                        <h3 class="post-title title-sm"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-                                        <ul class="post-meta">
-                                            <li><a href="author.html">John Doe</a></li>
-                                            <li>20 April 2018</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /post -->
-
-                            <!-- post -->
-                            <div class="col-md-4">
-                                <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-7.jpg" alt=""></a>
-                                    <div class="post-body">
-                                        <div class="post-category">
-                                            <a href="category.html">Health</a>
-                                            <a href="category.html">Lifestyle</a>
-                                        </div>
-                                        <h3 class="post-title title-sm"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-                                        <ul class="post-meta">
-                                            <li><a href="author.html">John Doe</a></li>
-                                            <li>20 April 2018</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /post -->
                         </div>
                     </div>
                     <!-- /related post -->
