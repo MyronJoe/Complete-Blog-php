@@ -12,6 +12,10 @@ if (isset($_GET['post_id'])) {
     // dump($post);
 }
 
+$posts = selectAll('posts', ['published' => 1]);
+
+$getAllTopics = selectAll('topics');
+
 ?>
 
 <head>
@@ -27,6 +31,10 @@ if (isset($_GET['post_id'])) {
         .image-section img{
             height: 400px;
             width: 100%;
+            object-fit: cover;
+        }
+        .image-section{
+            margin-bottom: 20px;
         }
     </style>
 
@@ -55,10 +63,9 @@ if (isset($_GET['post_id'])) {
                     <!-- post share -->
                     <div class="section-row">
                         <div class="post-share">
-                            <a href="#" class="social-facebook"><i class="fa fa-facebook"></i><span>Share</span></a>
-                            <a href="#" class="social-twitter"><i class="fa fa-twitter"></i><span>Tweet</span></a>
-                            <a href="#" class="social-pinterest"><i class="fa fa-pinterest"></i><span>Pin</span></a>
-                            <a href="#"><i class="fa fa-envelope"></i><span>Email</span></a>
+                            <a href="#"><i class="fa fa-user"></i><span>Email</span></a>
+                            <a href="#"><i class="fa fa-tag"></i><span>Email</span></a>
+                            <a href="#"><i class="fa fa-clock-o"></i><span>Email</span></a>
                         </div>
                     </div>
                     <!-- /post share -->
