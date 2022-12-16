@@ -28,12 +28,13 @@ $getAllTopics = selectAll('topics');
     <title><?php echo $post['title'] ?></title>
 
     <style>
-        .image-section img{
+        .image-section img {
             height: 400px;
             width: 100%;
             object-fit: cover;
         }
-        .image-section{
+
+        .image-section {
             margin-bottom: 20px;
         }
     </style>
@@ -79,7 +80,7 @@ $getAllTopics = selectAll('topics');
                                 <?php $topic['name'] = 'News'; ?>
                             <?php endif; ?>
                             <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
-                            <i class="fa fa-tag"></i>
+                                <i class="fa fa-tag"></i>
                                 <span><?php echo $topic['name'] ?></span>
                             </a>
 
@@ -98,11 +99,11 @@ $getAllTopics = selectAll('topics');
                         <p>
                             <?php echo $post['body'] ?>
                         </p>
-                        
+
                     </div>
                     <!-- /post content -->
 
-                   
+
 
                     <!-- /related post -->
                     <div>
@@ -111,21 +112,25 @@ $getAllTopics = selectAll('topics');
                         </div>
                         <div class="row">
                             <!-- post -->
-                            <div class="col-md-4">
-                                <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-                                    <div class="post-body">
-                                        <div class="post-category">
-                                            <a href="category.html">Health</a>
+                            <?php foreach ($posts as $key => $post) : ?>
+                                <?php if ($key < 3) : ?>
+                                    <div class="col-md-4">
+                                        <div class="post post-sm">
+                                            <a class="post-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+                                            <div class="post-body">
+                                                <div class="post-category">
+                                                    <a href="category.html">Health</a>
+                                                </div>
+                                                <h3 class="post-title title-sm"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+                                                <ul class="post-meta">
+                                                    <li><a href="author.html">John Doe</a></li>
+                                                    <li>20 April 2018</li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <h3 class="post-title title-sm"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-                                        <ul class="post-meta">
-                                            <li><a href="author.html">John Doe</a></li>
-                                            <li>20 April 2018</li>
-                                        </ul>
                                     </div>
-                                </div>
-                            </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                             <!-- /post -->
 
                         </div>
@@ -134,10 +139,10 @@ $getAllTopics = selectAll('topics');
                 </div>
 
                 <div class="col-md-4 side-bar">
-					<!-- category widget -->
-					<?php include(ROOT_PATH . "/app/includes/side.php"); ?>
-					<!-- /post widget -->
-				</div>
+                    <!-- category widget -->
+                    <?php include(ROOT_PATH . "/app/includes/side.php"); ?>
+                    <!-- /post widget -->
+                </div>
 
             </div>
             <!-- /row -->
