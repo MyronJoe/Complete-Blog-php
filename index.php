@@ -100,7 +100,7 @@ $getAllTopics = selectAll('topics');
 					<?php foreach ($posts as $key => $post) : ?>
 						<?php if ($key < 1) : ?>
 							<div class="post post-thumb">
-								<a class="post-img md-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+								<a class="post-img md-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 
@@ -142,7 +142,7 @@ $getAllTopics = selectAll('topics');
 					<?php foreach ($posts as $key => $post) : ?>
 						<?php if ($key >= 1 && $key <= 2) : ?>
 							<div class="post post-thumb">
-								<a class="post-img sm-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+								<a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 
@@ -154,7 +154,7 @@ $getAllTopics = selectAll('topics');
 
 										<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 									</div>
-									<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+									<h3 class="post-title"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
 									<ul class="post-meta">
 
 
@@ -202,7 +202,7 @@ $getAllTopics = selectAll('topics');
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key < 8) : ?>
 										<div class="post post-widget">
-											<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+											<a class="post-img sm-sm" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 											<div class="post-body">
 												<div class="post-category">
 
@@ -214,7 +214,7 @@ $getAllTopics = selectAll('topics');
 
 													<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 												</div>
-												<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+												<h3 class="post-title"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
 												<ul class="post-meta">
 
 													<?php if ($post['user_id']) : ?>
@@ -240,7 +240,7 @@ $getAllTopics = selectAll('topics');
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key >= 8 && $key <= 16) : ?>
 										<div class="post post-widget">
-											<a class="post-img sm-sm" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+											<a class="post-img sm-sm" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
 											<div class="post-body">
 												<div class="post-category">
 
@@ -253,7 +253,7 @@ $getAllTopics = selectAll('topics');
 
 													<a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
 												</div>
-												<h3 class="post-title"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+												<h3 class="post-title"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
 												<ul class="post-meta">
 
 
@@ -288,12 +288,12 @@ $getAllTopics = selectAll('topics');
 						<!-- post -->
 						<div class="col-md-4">
 							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-4.jpg" alt=""></a>
+								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-4.jpg" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 										<a href="category.html">Health</a>
 									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Postea senserit id eos, vivendo periculis ei qui</a></h3>
 									<ul class="post-meta">
 										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>
@@ -306,12 +306,12 @@ $getAllTopics = selectAll('topics');
 						<!-- post -->
 						<div class="col-md-4">
 							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-1.jpg" alt=""></a>
+								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-1.jpg" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 										<a href="category.html">Travel</a>
 									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
+									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
 									<ul class="post-meta">
 										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>
@@ -324,12 +324,12 @@ $getAllTopics = selectAll('topics');
 						<!-- post -->
 						<div class="col-md-4">
 							<div class="post post-sm">
-								<a class="post-img" href="blog-post.html"><img src="assets/img/post-3.jpg" alt=""></a>
+								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-3.jpg" alt=""></a>
 								<div class="post-body">
 									<div class="post-category">
 										<a href="category.html">Lifestyle</a>
 									</div>
-									<h3 class="post-title title-sm"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
+									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
 									<ul class="post-meta">
 										<li><a href="#">John Doe</a></li>
 										<li>20 April 2018</li>

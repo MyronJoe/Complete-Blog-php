@@ -2,7 +2,7 @@
     <div class="col-md-4">
         <div class="footer-widget">
             <div class="footer-logo">
-                <a href="index.html" class="logo">
+                <a href="<?php echo BASE_URL . '/' ?>" class="logo">
                     <h1 style='color:white'>Frank<span style='color:orangered'>Naija</span></h1>
                 </a>
             </div>

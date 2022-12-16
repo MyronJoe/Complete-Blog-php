@@ -69,7 +69,7 @@ if (isset($_GET['t_id'])) {
                     <?php foreach ($all_posts as $key => $post) : ?>
                         <!-- post -->
                         <div class="post post-widget">
-                            <a class="post-img sm-img" href=""><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+                            <a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
                             <div class="post-body">
                                 <div class="post-category">
 
@@ -82,7 +82,7 @@ if (isset($_GET['t_id'])) {
                                     <a href=""><?php echo $topic['name'] ?></a>
                                 </div>
 
-                                <h3 class="post-title title-lg"><a href="blog-post.html"><?php echo $post['title'] ?></a></h3>
+                                <h3 class="post-title title-lg"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
                                 <ul class="post-meta">
 
 

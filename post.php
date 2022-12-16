@@ -37,6 +37,16 @@ $getAllTopics = selectAll('topics');
         .image-section {
             margin-bottom: 20px;
         }
+        .post-img img{
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .sm-sm img {
+			height: 90px;
+			width: 100%;
+			object-fit: cover;
+		}
     </style>
 
 </head>
@@ -75,14 +85,19 @@ $getAllTopics = selectAll('topics');
 
 
                             <?php if ($post['topic_id']) : ?>
-                                <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
-                            <?php else : ?>
-                                <?php $topic['name'] = 'News'; ?>
-                            <?php endif; ?>
-                            <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
+                                <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
+                                <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
                                 <i class="fa fa-tag"></i>
                                 <span><?php echo $topic['name'] ?></span>
                             </a>
+                            <?php else : ?>
+                                <?php $topic['name'] = 'News'; ?>
+                                <a>
+                                    <i class="fa fa-tag"></i>
+                                    <span><?php echo $topic['name'] ?></span>
+                                </a>
+                            <?php endif; ?>
+                            
 
 
                             <a><i class="fa fa-clock-o"></i><span><?php echo date('F j, Y', strtotime($post['created_at'])) ?></span></a>
@@ -116,15 +131,40 @@ $getAllTopics = selectAll('topics');
                                 <?php if ($key < 3) : ?>
                                     <div class="col-md-4">
                                         <div class="post post-sm">
-                                            <a class="post-img" href="blog-post.html"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+                                            <a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">
+                                                <img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt="">
+                                            </a>
                                             <div class="post-body">
                                                 <div class="post-category">
-                                                    <a href="category.html">Health</a>
+
+                                                <?php if ($post['topic_id']) : ?>
+                                                    <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
+                                                    <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
+                                                    <i class="fa fa-tag"></i>
+                                                    <span><?php echo $topic['name'] ?></span>
+                                                </a>
+                                                <?php else : ?>
+                                                    <?php $topic['name'] = 'News'; ?>
+                                                    <a>
+                                                        <i class="fa fa-tag"></i>
+                                                        <span><?php echo $topic['name'] ?></span>
+                                                    </a>
+                                                <?php endif; ?>
                                                 </div>
-                                                <h3 class="post-title title-sm"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+                                                <h3 class="post-title title-sm">
+                                                    <a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">
+                                                        <?php echo $post['title'] ?>
+                                                    </a>
+                                                </h3>
                                                 <ul class="post-meta">
-                                                    <li><a href="author.html">John Doe</a></li>
-                                                    <li>20 April 2018</li>
+                                                <?php if ($post['user_id']) : ?>
+                                                    <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                                                <?php else : ?>
+                                                    <?php $author['username'] = 'Frank'; ?>
+                                                <?php endif; ?>
+
+                                                    <li><a><?php echo $author['username'] ?></a></li>
+                                                    <li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -151,7 +191,7 @@ $getAllTopics = selectAll('topics');
             <div class="footer-bottom row">
                 <div class="col-md-6 col-md-push-6">
                     <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contacts</a></li>
                         <li><a href="#">Advertise</a></li>
@@ -201,7 +241,7 @@ $getAllTopics = selectAll('topics');
         <div class="footer-bottom row">
             <div class="col-md-6 col-md-push-6">
                 <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contacts</a></li>
                     <li><a href="#">Advertise</a></li>
@@ -210,7 +250,7 @@ $getAllTopics = selectAll('topics');
             </div>
             <div class="col-md-6 col-md-pull-6">
                 <div class="footer-copyright">
-                    <a href="index.html" class="logo">
+                    <a href="<?php echo BASE_URL . '/' ?>" class="logo">
                         <h1 style='color:white'>Frank<span>Naija</span></h1>
                     </a>
                 </div>

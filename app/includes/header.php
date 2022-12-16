@@ -19,7 +19,7 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 
 				<!-- logo -->
 				<div class="nav-logo">
-					<a href="index.html" class="logo">
+					<a href="<?php echo BASE_URL . '/' ?>" class="logo">
 						<h1 style="margin-top:17px">Frank<spn style='color:orangered'>Naija</span></h1>
 					</a>
 				</div>
@@ -67,7 +67,7 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 							</div>
 						</div>
 					</li>
-					<li><a href="index.html">Lifestyle</a></li>
+					<li><a href="#">Lifestyle</a></li>
 					<li><a href="#">Fashion</a></li>
 					<li><a href="#">Technology</a></li>
 					<li><a href="#">Health</a></li>
@@ -98,7 +98,7 @@ require_once(ROOT_PATH . "/app/includes/session.php");
 		<!-- Aside Nav -->
 		<div id="nav-aside">
 			<ul class="nav-aside-menu">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
 				<li class="has-dropdown"><a>Categories</a>
 					<ul class="dropdown">
 						<li><a href="#">Lifestyle</a></li>
