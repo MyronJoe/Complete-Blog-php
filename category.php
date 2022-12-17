@@ -15,12 +15,7 @@ if (isset($_GET['t_id'])) {
 
     $category = selectOne('topics', ['id' => $_GET['t_id']]);
 
-    // dump($posts);
 }
-
-
-
-
 
 ?>
 
