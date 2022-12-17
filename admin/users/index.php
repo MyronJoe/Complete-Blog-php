@@ -38,8 +38,8 @@ require_once(ROOT_PATH . "/app/includes/session.php");
                     ?>
                     <tr>
                         <th scope="row"><?php echo $key + 1 ?></th>
-                        <th scope="row"> 
-                            <img style="object-fit: cover;" height="60px" width="60px" src="<?php echo BASE_URL . '/assets/img/' .$user['profile_image']?>" alt="<?php echo $username?>">
+                        <th scope="row">
+                            <img style="object-fit: cover;" height="60px" width="60px" src="<?php echo BASE_URL . '/assets/img/' . $user['profile_image'] ?>" alt="<?php echo $username ?>">
                         </th>
                         <td><?php echo $user['username'] ?></td>
                         <td><?php echo $user['email'] ?></td>
