@@ -9,7 +9,7 @@ if (isset($_GET['post_id'])) {
     $id = $_GET['post_id'];
 
     $post = selectOne('posts', ['id' => $id]);
-    // dump($post);
+
 }
 
 $posts = selectAll('posts', ['published' => 1]);
