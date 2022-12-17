@@ -117,17 +117,17 @@ require_once(ROOT_PATH . '/app/controllers/users.php');
                         </div><br>
 
                         <div class="col-md-12 mb-3">
-                        <?php if (isset($admin) && $admin == 1) : ?>
-                            <label>
-                            <input type="checkbox" name="admin" checked>
-                            Admin
-                            </label>
-                        <?php else : ?>
-                            <label>
-                            <input type="checkbox" name="admin">
-                            Admin
-                            </label>
-                        <?php endif; ?>
+                            <?php if (isset($admin) && $admin == 1) : ?>
+                                <label>
+                                    <input type="checkbox" name="admin" checked>
+                                    Admin
+                                </label>
+                            <?php else : ?>
+                                <label>
+                                    <input type="checkbox" name="admin">
+                                    Admin
+                                </label>
+                            <?php endif; ?>
                         </div>
 
                         <div class="form-group mb-0">
