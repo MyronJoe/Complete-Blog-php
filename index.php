@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
 include 'path.php';
 include ROOT_PATH . "/app/database/db.php";
@@ -9,10 +8,8 @@ $posts = selectAll('posts', ['published' => 1]);
 
 $getAllTopics = selectAll('topics');
 
-// $entertainment = selectOne('topics', ['name' => 'Entertainment']);
 
 ?>
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
