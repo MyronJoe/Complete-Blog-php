@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
 include 'path.php';
 include ROOT_PATH . "/app/database/db.php";
