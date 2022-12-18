@@ -132,7 +132,6 @@
         <!-- /row -->
     </div>
     <!-- /container -->
-
     <!-- /FOOTER -->
 
     <!-- jQuery Plugins -->
