@@ -125,12 +125,9 @@
                     <div class="form-group mb-0">
                         <input type="submit" name="updateUser" value="Update User" class="btn">
                     </div>
-
                 </form>
-
             </div>
         </div>
-
     </div>
     <!-- FOOTER -->
 
