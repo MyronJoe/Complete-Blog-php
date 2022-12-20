@@ -8,7 +8,6 @@ $posts = selectAll('posts', ['published' => 1]);
 
 $getAllTopics = selectAll('topics');
 
-
 ?>
 <head>
 	<meta charset="utf-8">
