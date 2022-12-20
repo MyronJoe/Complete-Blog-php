@@ -3,7 +3,6 @@
 <?php
 include 'path.php';
 include ROOT_PATH . "/app/database/db.php";
-
 $getAllTopics = selectAll('topics');
 
 if (isset($_GET['t_id'])) {
@@ -13,7 +12,6 @@ if (isset($_GET['t_id'])) {
     $all_posts = selectAll('posts', ['topic_id' => $_GET['t_id']]);
 
     $category = selectOne('topics', ['id' => $_GET['t_id']]);
-
 }
 
 ?>
