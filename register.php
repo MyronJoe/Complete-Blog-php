@@ -119,8 +119,6 @@
     <!-- FOOTER -->
     <!-- container -->
     <div class="container" style="background-color: #242424; width:100%">
-
-
         <!-- row -->
         <div class="footer-bottom row">
             <div class="col-md-6 col-md-push-6">
