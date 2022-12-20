@@ -11,7 +11,6 @@ if (isset($_GET['post_id'])) {
     $post = selectOne('posts', ['id' => $id]);
 
 }
-
 $posts = selectAll('posts', ['published' => 1]);
 
 $getAllTopics = selectAll('topics');
