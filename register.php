@@ -88,12 +88,11 @@
                         <input type="email" class="form-control" value="<?php echo $email ?>" id="email" name="email">
                     </div>
 
-
                     <div>
                         <label for="Password">Password *</label>
                         <input type="password" class="form-control" value="<?php echo $password ?>" id="Password" name="password">
                     </div>
-                    
+
                     <div>
                         <label for="Confirm Password">Confirm Password *</label>
                         <input type="password" value="<?php echo $confirmpass ?>" class="form-control" id="Confirm Password" name="passwordconfirm">
