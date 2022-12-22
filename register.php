@@ -74,7 +74,6 @@
                 </div>
 
                 <form method="POST" class="form-g" action="register.php" novalidate class="form_sec">
-
                     <?php include(ROOT_PATH . "/app/helpers/formerrors.php") ?>
 
                     <div>
