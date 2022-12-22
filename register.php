@@ -82,7 +82,6 @@
                         <input type="text" class="form-control" value="<?php echo $username ?>" id="name" name="username">
                     </div>
 
-
                     <div>
                         <label for="email">Email *</label>
                         <input type="email" class="form-control" value="<?php echo $email ?>" id="email" name="email">
