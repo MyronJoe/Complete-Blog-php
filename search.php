@@ -88,7 +88,6 @@ if (isset($_POST['term'])) {
                                 <h3 class="post-title title-lg"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
                                 <ul class="post-meta">
 
-
                                     <?php if ($post['user_id']) : ?>
                                         <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
                                     <?php else : ?>
