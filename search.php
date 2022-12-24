@@ -109,7 +109,7 @@ if (isset($_POST['term'])) {
 
                 <div class="col-md-4 sidebar">
                     <!-- ad widget-->
-                    
+                    <?php include(ROOT_PATH . "/app/includes/side.php"); ?>
                     <!-- /Ad widget -->
                 </div>
             </div>
