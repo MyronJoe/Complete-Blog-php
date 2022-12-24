@@ -12,7 +12,7 @@ if (isset($_POST['term'])) {
     $all_posts_searched = searchPost($_POST['term']);
 
     
-    // $posts = selectAll('posts', ['published' => 1]);
+    $posts = selectAll('posts', ['published' => 1]);
 
     // $all_posts = selectAll('posts', ['topic_id' => $_GET['t_id']]);
 
