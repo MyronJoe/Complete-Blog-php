@@ -9,7 +9,6 @@ if (isset($_GET['post_id'])) {
     $id = $_GET['post_id'];
 
     $post = selectOne('posts', ['id' => $id]);
-
 }
 $posts = selectAll('posts', ['published' => 1]);
 
@@ -186,86 +185,54 @@ $getAllTopics = selectAll('topics');
             </div>
             <!-- /row -->
 
-            <!-- row -->
-            <div class="footer-bottom row">
-                <div class="col-md-6 col-md-push-6">
-                    <ul class="footer-nav">
-                        <li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contacts</a></li>
-                        <li><a href="#">Advertise</a></li>
-                        <li><a href="#">Privacy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-md-pull-6">
-                    <div class="footer-copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+        </div>
+        </footer>
+
+
+
+
+
+        <!-- /SECTION -->
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
+                <!-- /row -->
+
+                <!-- row -->
+                <div class="footer-bottom row">
+                    <div class="col-md-6 col-md-push-6">
+                        <ul class="footer-nav">
+                            <li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contacts</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-md-pull-6">
+                        <div class="footer-copyright">
+                            <a href="<?php echo BASE_URL . '/' ?>" class="logo">
+                                <h1 style='color:white'>Frank<span>Naija</span></h1>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <!-- /row -->
             </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
+            <!-- /container -->
         </footer>
         <!-- /FOOTER -->
 
         <!-- jQuery Plugins -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/main.js"></script>
-
-</body>
-
-</html>
-
-
-
-
-<!-- /SECTION -->
-
-<!-- FOOTER -->
-<footer id="footer">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
-        <!-- /row -->
-
-        <!-- row -->
-        <div class="footer-bottom row">
-            <div class="col-md-6 col-md-push-6">
-                <ul class="footer-nav">
-                    <li><a href="<?php echo BASE_URL . '/' ?>">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contacts</a></li>
-                    <li><a href="#">Advertise</a></li>
-                    <li><a href="#">Privacy</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6 col-md-pull-6">
-                <div class="footer-copyright">
-                    <a href="<?php echo BASE_URL . '/' ?>" class="logo">
-                        <h1 style='color:white'>Frank<span>Naija</span></h1>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</footer>
-<!-- /FOOTER -->
-
-<!-- jQuery Plugins -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.stellar.min.js"></script>
-<script src="assets/js/main.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.stellar.min.js"></script>
+        <script src="assets/js/main.js"></script>
 
 </body>
 
