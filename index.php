@@ -14,6 +14,11 @@ $getAllTopics = selectAll('topics');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+		.post-img img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
 		.success {
 			color: #155724;
 			border: 2px solid #155724;
@@ -278,62 +283,57 @@ $getAllTopics = selectAll('topics');
 					<div class="row">
 						<div class="col-md-12">
 							<div class="section-title">
-								<h2 class="title">Technology & Health</h2>
+								<h2 class="title">Popular Posts</h2>
 							</div>
 						</div>
 						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-4.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Health</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-									<ul class="post-meta">
-										<li><a href="#">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+						<?php foreach ($posts as $key => $post) : ?>
+                                <?php if ($key < 3) : ?>
+                                    <div class="col-md-4">
+                                        <div class="post post-sm">
+                                            <a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">
+                                                <img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt="">
+                                            </a>
+                                            <div class="post-body">
+                                                <div class="post-category">
+
+                                                    <?php if ($post['topic_id']) : ?>
+                                                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
+                                                        <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
+                                                            <i class="fa fa-tag"></i>
+                                                            <span><?php echo $topic['name'] ?></span>
+                                                        </a>
+                                                    <?php else : ?>
+                                                        <?php $topic['name'] = 'News'; ?>
+                                                        <a>
+                                                            <i class="fa fa-tag"></i>
+                                                            <span><?php echo $topic['name'] ?></span>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <h3 class="post-title title-sm">
+                                                    <a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">
+                                                        <?php echo $post['title'] ?>
+                                                    </a>
+                                                </h3>
+                                                <ul class="post-meta">
+                                                    <?php if ($post['user_id']) : ?>
+                                                        <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                                                    <?php else : ?>
+                                                        <?php $author['username'] = 'Frank'; ?>
+                                                    <?php endif; ?>
+
+                                                    <li><a><?php echo $author['username'] ?></a></li>
+                                                    <li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
 						<!-- /post -->
 
-						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-1.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Travel</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-									<ul class="post-meta">
-										<li><a href="#">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="col-md-4">
-							<div class="post post-sm">
-								<a class="post-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="assets/img/post-3.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="category.html">Lifestyle</a>
-									</div>
-									<h3 class="post-title title-sm"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-									<ul class="post-meta">
-										<li><a href="#">John Doe</a></li>
-										<li>20 April 2018</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
+						
 					</div>
 					<!-- /row -->
 				</div>
