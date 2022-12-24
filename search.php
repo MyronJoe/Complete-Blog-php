@@ -3,18 +3,23 @@
 <?php
 include 'path.php';
 include ROOT_PATH . "/app/database/db.php";
-$getAllTopics = selectAll('topics');
+// $getAllTopics = selectAll('topics');
+
+$posts = array();
 
 if (isset($_POST['term'])) {
 
-    dump($_POST);
+    $posts = searchPost($_POST['term']);
 
-    $posts = selectAll('posts', ['published' => 1]);
+    
+    // $posts = selectAll('posts', ['published' => 1]);
 
-    $all_posts = selectAll('posts', ['topic_id' => $_GET['t_id']]);
+    // $all_posts = selectAll('posts', ['topic_id' => $_GET['t_id']]);
 
-    $category = selectOne('topics', ['id' => $_GET['t_id']]);
+    // $category = selectOne('topics', ['id' => $_GET['t_id']]);
 }
+
+dump($posts);
 
 ?>
 
