@@ -5,11 +5,11 @@ include 'path.php';
 include ROOT_PATH . "/app/database/db.php";
 // $getAllTopics = selectAll('topics');
 
-$posts = array();
+$all_posts_searched = array();
 
 if (isset($_POST['term'])) {
 
-    $posts = searchPost($_POST['term']);
+    $all_posts_searched = searchPost($_POST['term']);
 
     
     // $posts = selectAll('posts', ['published' => 1]);
@@ -19,7 +19,7 @@ if (isset($_POST['term'])) {
     // $category = selectOne('topics', ['id' => $_GET['t_id']]);
 }
 
-dump($posts);
+// dump($posts);
 
 ?>
 
@@ -65,7 +65,41 @@ dump($posts);
                 <h2 style="margin-left: 15px ;"></h2>
                 <div class="col-md-8">
 
-                    
+                <?php foreach ($all_posts_searched as $key => $post) : ?>
+                        <!-- post -->
+                        <div class="post post-widget">
+                            <a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-category">
+
+                                    <?php if ($post['topic_id']) : ?>
+                                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]) ?>
+                                    <?php else : ?>
+                                        <?php $topic['name'] = 'News'; ?>
+                                    <?php endif; ?>
+
+                                    <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>"><?php echo $topic['name'] ?></a>
+                                </div>
+
+                                <h3 class="post-title title-lg"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
+                                <ul class="post-meta">
+
+
+                                    <?php if ($post['user_id']) : ?>
+                                        <?php $author = selectOne('users', ['id' => $post['user_id']]) ?>
+                                    <?php else : ?>
+                                        <?php $author['username'] = 'Frank'; ?>
+                                    <?php endif; ?>
+
+
+                                    <li><a><?php echo $author['username'] ?></a></li>
+                                    <li><?php echo date('F j, Y', strtotime($post['created_at'])) ?></li>
+                                </ul>
+                                <a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo substr($post['body'], 0, 120) . '...' ?></a>
+                            </div>
+                        </div>
+                        <!-- /post -->
+                    <?php endforeach; ?>
 
                 </div>
 
