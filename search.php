@@ -17,7 +17,6 @@ if (isset($_POST['term'])) {
 
 }
 
-// dump($posts);
 
 ?>
 
