@@ -62,7 +62,11 @@ if (isset($_POST['term'])) {
         <div class="container">
             <!-- row -->
             <div class="row">
-                <h2 style="margin-left: 15px ;"></h2>
+                <?php if (isset($_POST['term'])) : ?>
+                    <h2 style="margin-left: 15px ;">You Searched For: <?php echo $_POST['term']; ?></h2>
+                <?php else : ?>
+                    <h2 style="margin-left: 15px ;">No Search Input</h2>
+                <?php endif ?>
                 <div class="col-md-8">
 
                 <?php foreach ($all_posts_searched as $key => $post) : ?>
