@@ -17,7 +17,6 @@ if (isset($_POST['term'])) {
     header('location: '. BASE_URL . '/index.php');
 }
 
-
 ?>
 
 <head>
