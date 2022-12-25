@@ -152,4 +152,5 @@ if (isset($_POST['term'])) {
     <script src="assets/js/jquery.stellar.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
