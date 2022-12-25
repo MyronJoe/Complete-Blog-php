@@ -13,6 +13,8 @@ if (isset($_POST['term'])) {
 
     $posts = selectAll('posts', ['published' => 1]);
 
+}else{
+    header('location: '. BASE_URL . '/index.php');
 }
 
 
