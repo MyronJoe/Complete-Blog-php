@@ -12,9 +12,8 @@ if (isset($_POST['term'])) {
     $all_posts_searched = searchPost($_POST['term']);
 
     $posts = selectAll('posts', ['published' => 1]);
-
-}else{
-    header('location: '. BASE_URL . '/index.php');
+} else {
+    header('location: ' . BASE_URL . '/index.php');
 }
 
 ?>
@@ -65,7 +64,7 @@ if (isset($_POST['term'])) {
                 <?php endif ?>
                 <div class="col-md-8">
 
-                <?php foreach ($all_posts_searched as $key => $post) : ?>
+                    <?php foreach ($all_posts_searched as $key => $post) : ?>
                         <!-- post -->
                         <div class="post post-widget">
                             <a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
@@ -149,9 +148,9 @@ if (isset($_POST['term'])) {
 
     <!-- jQuery Plugins -->
     <script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.stellar.min.js"></script>
-	<script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 
