@@ -98,8 +98,6 @@ $getAllTopics = selectAll('topics');
                                 </a>
                             <?php endif; ?>
 
-
-
                             <a><i class="fa fa-clock-o"></i><span><?php echo date('F j, Y', strtotime($post['created_at'])) ?></span></a>
                         </div>
                     </div>
