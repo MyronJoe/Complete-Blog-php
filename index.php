@@ -331,7 +331,6 @@ $getAllTopics = selectAll('topics');
                                 <?php endif; ?>
                             <?php endforeach; ?>
 						<!-- /post -->
-
 						
 					</div>
 					<!-- /row -->
