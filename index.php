@@ -278,7 +278,6 @@ $getAllTopics = selectAll('topics');
 					</div>
 					<!-- /row -->
 
-
 					<!-- row -->
 					<div class="row">
 						<div class="col-md-12">
