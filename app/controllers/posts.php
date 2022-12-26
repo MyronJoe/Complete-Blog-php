@@ -56,6 +56,7 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
 }
 
 
+
 //add post funtinality
 if(isset($_POST['post-btn'])){
     // adminOnly();
