@@ -145,7 +145,6 @@ if (isset($_POST['term'])) {
         <!-- /container -->
     </footer>
     <!-- /FOOTER -->
-
     <!-- jQuery Plugins -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
