@@ -27,7 +27,6 @@ if (isset($_GET['id'])) {
     $post_img = $post['image'];
     $published = $post['published'];
     
-    // dump($post);
 }
 
 //Delete functionality
