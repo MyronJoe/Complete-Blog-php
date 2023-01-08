@@ -107,14 +107,6 @@
         exit();
     }
 
-    // if (isset($_GET['id'])) {
-    //     $user = selectOne($table, ['id' => $_GET['id']]);
-    //     // dump($user);
-    //     $id = $user['id'];
-    //     $username = $user["username"];
-    //     $email = $user["email"];
-    //     $admin = $user['admin'];
-    // }
 
     if(isset($_GET['user_id'])) {
         $user = selectOne('users', ["id" => $_GET['user_id']]);
