@@ -27,7 +27,7 @@ if (isset($_POST['term'])) {
     include(ROOT_PATH . "/app/includes/css.php");
 
     ?>
-    <title>Category: <?php echo $category['name']; ?></title>
+    <title>Searched for: <?php echo $_POST['term']; ?></title>
 
     <style>
         .sm-img img {

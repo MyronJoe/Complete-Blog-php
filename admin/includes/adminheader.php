@@ -69,7 +69,7 @@
 <body>
     <nav style="display: flex;">
         <div class="logo">
-            <h3><a href="<?php echo BASE_URL . '/index.php' ?>">FrankNaija</a></h3>
+            <h3><a href="<?php echo BASE_URL . '/' ?>">FrankNaija</a></h3>
         </div>
         <div class="user">
             <ul>
