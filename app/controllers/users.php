@@ -117,19 +117,6 @@
         $user_image = $user['profile_image'];
     }
 
-           
-
-    //     }else{
-
-    //         $username = $_POST["username"];
-    //         $email = $_POST["email"];
-    //         $password = $_POST["password"];
-    //         $confirmpass = $_POST["passwordconfirm"];
-    //         $admin = isset($_POST['admin']) ? 1 : 0;
-    //     }
-
-    //     // dump($_POST);
-    // }
 
     if (isset($_POST['updateUser'])) {
         // adminOnly();
