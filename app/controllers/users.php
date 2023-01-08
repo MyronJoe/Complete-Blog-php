@@ -117,25 +117,6 @@
         $user_image = $user['profile_image'];
     }
 
-
-    // // edit admin user
-    // if (isset($_POST['update-user'])) {
-    //     // adminOnly();
-    //     $errors = validateUser($_POST, $errors);
-        
-
-    //     if (count($errors) === 0) {
-    //         $id = $_POST['id'];
-    //         unset($_POST['update-user'], $_POST['id'], $_POST['passwordconfirm']);
-    //         $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-            
-    //         $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
-    //         $count = update($table, $id, $_POST);
-    //         $_SESSION['message'] = "Admin user Updated successfully";
-    //         $_SESSION['type'] = "success";
-    //         header("location: " . BASE_URL . "/admin/users/index.php");
-    //         exit();
            
 
     //     }else{
