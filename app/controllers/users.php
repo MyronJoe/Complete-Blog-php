@@ -224,7 +224,6 @@
             $user_image = $_POST['profile_image'];
         }
 
-        // dump($_POST);
     }
 
 
