@@ -47,9 +47,6 @@ if (isset($_GET['t_id'])) {
 
     <!-- HEADER -->
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
-    <!-- /HEADER -->
-
-    <!-- SECTION -->
     <div class="section">
         <!-- container -->
         <div class="container">
@@ -135,9 +132,7 @@ if (isset($_GET['t_id'])) {
                     </div>
                 </div>
             </div>
-            <!-- /row -->
         </div>
-        <!-- /container -->
     </footer>
     <!-- /FOOTER -->
 
