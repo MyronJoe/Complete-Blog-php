@@ -346,9 +346,7 @@ $getAllTopics = selectAll('topics');
 		</div>
 		<!-- /container -->
 	</div>
-	<!-- /SECTION -->
-
-	<!-- FOOTER -->
+	
 	<footer id="footer">
 		<!-- container -->
 		<div class="container">
