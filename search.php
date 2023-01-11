@@ -107,11 +107,9 @@ if (isset($_POST['term'])) {
                     <!-- /Ad widget -->
                 </div>
             </div>
-            <!-- /row -->
         </div>
-        <!-- /container -->
     </div>
-    <!-- /SECTION -->
+
 
     <!-- FOOTER -->
     <footer id="footer">
