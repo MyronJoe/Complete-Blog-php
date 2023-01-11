@@ -103,10 +103,8 @@
 
     </div>
 
-
     <!-- FOOTER -->
 
-    <!-- container -->
     <div class="container" style="background-color: #242424; width:100%">
 
 
