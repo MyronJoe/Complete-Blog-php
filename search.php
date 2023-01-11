@@ -96,7 +96,6 @@ if (isset($_POST['term'])) {
                                 <a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo substr($post['body'], 0, 120) . '...' ?></a>
                             </div>
                         </div>
-                        <!-- /post -->
                     <?php endforeach; ?>
 
                 </div>
@@ -113,7 +112,7 @@ if (isset($_POST['term'])) {
 
     <!-- FOOTER -->
     <footer id="footer">
-        <!-- container -->
+
         <div class="container">
             <!-- row -->
             <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
