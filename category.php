@@ -70,7 +70,7 @@ if (isset($_GET['t_id'])) {
 
                                     <a href=""><?php echo $topic['name'] ?></a>
                                 </div>
-                                
+
                                 <h3 class="post-title title-lg"><a href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><?php echo $post['title'] ?></a></h3>
                                 <ul class="post-meta">
 
@@ -97,11 +97,10 @@ if (isset($_GET['t_id'])) {
                     <!-- /Ad widget -->
                 </div>
             </div>
-            <!-- /row -->
+
         </div>
-        <!-- /container -->
     </div>
-    <!-- /SECTION -->
+    
 
     <!-- FOOTER -->
     <footer id="footer">
