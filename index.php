@@ -176,7 +176,7 @@ $getAllTopics = selectAll('topics');
 					<!-- /post -->
 				</div>
 			</div>
-			<!-- /row -->
+
 		</div>
 		<!-- /container -->
 	</div>
@@ -276,7 +276,7 @@ $getAllTopics = selectAll('topics');
 							</div>
 						</div>
 					</div>
-					<!-- /row -->
+		
 
 					<!-- row -->
 					<div class="row">
@@ -333,7 +333,7 @@ $getAllTopics = selectAll('topics');
 						<!-- /post -->
 						
 					</div>
-					<!-- /row -->
+		
 				</div>
 
 				<div class="col-md-4 side-bar">
@@ -342,7 +342,7 @@ $getAllTopics = selectAll('topics');
 					<!-- /post widget -->
 				</div>
 			</div>
-			<!-- /row -->
+
 		</div>
 		<!-- /container -->
 	</div>
@@ -354,7 +354,7 @@ $getAllTopics = selectAll('topics');
 		<div class="container">
 			<!-- row -->
 			<?php require(ROOT_PATH . "/app/includes/footer.php") ?>
-			<!-- /row -->
+
 
 			<!-- row -->
 			<div class="footer-bottom row">
@@ -375,7 +375,7 @@ $getAllTopics = selectAll('topics');
 					</div>
 				</div>
 			</div>
-			<!-- /row -->
+
 		</div>
 		<!-- /container -->
 	</footer>
