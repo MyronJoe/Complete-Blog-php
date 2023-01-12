@@ -348,13 +348,8 @@ $getAllTopics = selectAll('topics');
 	</div>
 	
 	<footer id="footer">
-		<!-- container -->
 		<div class="container">
-			<!-- row -->
 			<?php require(ROOT_PATH . "/app/includes/footer.php") ?>
-
-
-			<!-- row -->
 			<div class="footer-bottom row">
 				<div class="col-md-6 col-md-push-6">
 					<ul class="footer-nav">
@@ -373,13 +368,9 @@ $getAllTopics = selectAll('topics');
 					</div>
 				</div>
 			</div>
-
 		</div>
-		<!-- /container -->
 	</footer>
-	<!-- /FOOTER -->
 
-	<!-- jQuery Plugins -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/jquery.stellar.min.js"></script>
