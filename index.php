@@ -196,10 +196,8 @@ $getAllTopics = selectAll('topics');
 								<h2 class="title">Recent posts</h2>
 							</div>
 						</div>
-						<!-- post -->
 						<div class="row">
 							<div class="col-md-6" style="padding:0 2em">
-								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key < 8) : ?>
 										<div class="post post-widget">
@@ -232,12 +230,9 @@ $getAllTopics = selectAll('topics');
 										</div>
 									<?php endif; ?>
 								<?php endforeach; ?>
-								<!-- /post -->
-
 							</div>
 
 							<div class="col-md-6" style="padding:0 2em">
-								<!-- post -->
 								<?php foreach ($posts as $key => $post) : ?>
 									<?php if ($key >= 8 && $key <= 16) : ?>
 										<div class="post post-widget">
@@ -272,7 +267,6 @@ $getAllTopics = selectAll('topics');
 										</div>
 									<?php endif; ?>
 								<?php endforeach; ?>
-								<!-- /post -->
 							</div>
 						</div>
 					</div>
