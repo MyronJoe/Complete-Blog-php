@@ -103,12 +103,7 @@
 
     </div>
 
-    <!-- FOOTER -->
-
     <div class="container" style="background-color: #242424; width:100%">
-
-
-        <!-- row -->
         <div class="footer-bottom row">
             <div class="col-md-6 col-md-push-6">
                 <ul class="footer-nav">
@@ -127,7 +122,6 @@
                 </div>
             </div>
         </div>
-        <!-- /row -->
     </div>
   
     <script src="assets/js/jquery.min.js"></script>
