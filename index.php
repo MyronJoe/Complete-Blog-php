@@ -180,16 +180,11 @@ $getAllTopics = selectAll('topics');
 		</div>
 		<!-- /container -->
 	</div>
-	<!-- /SECTION -->
 
-	<!-- SECTION -->
 	<div class="section">
-		<!-- container -->
 		<div class="container">
-			<!-- row -->
 			<div class="row">
 				<div class="col-md-8">
-					<!-- row -->
 					<div class="row">
 						<div class="col-md-12">
 							<div class="section-title">
