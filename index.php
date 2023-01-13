@@ -173,12 +173,10 @@ $getAllTopics = selectAll('topics');
 							</div>
 						<?php endif; ?>
 					<?php endforeach; ?>
-					<!-- /post -->
 				</div>
 			</div>
 
 		</div>
-		<!-- /container -->
 	</div>
 
 	<div class="section">
