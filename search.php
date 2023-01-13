@@ -55,7 +55,6 @@ if (isset($_POST['term'])) {
     <div class="section">
         <!-- container -->
         <div class="container">
-            <!-- row -->
             <div class="row">
                 <?php if (isset($_POST['term'])) : ?>
                     <h2 style="margin-left: 15px ;">You Searched For: <?php echo $_POST['term']; ?></h2>
@@ -65,7 +64,6 @@ if (isset($_POST['term'])) {
                 <div class="col-md-8">
 
                     <?php foreach ($all_posts_searched as $key => $post) : ?>
-                        <!-- post -->
                         <div class="post post-widget">
                             <a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
                             <div class="post-body">
@@ -139,7 +137,6 @@ if (isset($_POST['term'])) {
             </div>
             <!-- /row -->
         </div>
-        <!-- /container -->
     </footer>
 
     <script src="assets/js/jquery.min.js"></script>
