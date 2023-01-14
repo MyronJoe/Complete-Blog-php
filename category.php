@@ -110,7 +110,6 @@ if (isset($_GET['t_id'])) {
             <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
             <!-- /row -->
 
-            <!-- row -->
             <div class="footer-bottom row">
                 <div class="col-md-6 col-md-push-6">
                     <ul class="footer-nav">
