@@ -104,7 +104,6 @@ if (isset($_GET['t_id'])) {
 
     <!-- FOOTER -->
     <footer id="footer">
-        <!-- container -->
         <div class="container">
             <!-- row -->
             <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
