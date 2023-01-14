@@ -48,7 +48,6 @@ if (isset($_GET['t_id'])) {
     <!-- HEADER -->
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     <div class="section">
-        <!-- container -->
         <div class="container">
             <!-- row -->
             <div class="row">
