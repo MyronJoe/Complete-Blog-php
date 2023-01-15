@@ -70,7 +70,7 @@ $getAllTopics = selectAll('topics');
                     <div class="image-section">
                         <img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt="<?php echo $post['title'] ?>">
                     </div>
-                    <!-- post share -->
+
                     <div class="section-row">
                         <div class="post-share">
 
@@ -100,7 +100,6 @@ $getAllTopics = selectAll('topics');
                             <a><i class="fa fa-clock-o"></i><span><?php echo date('F j, Y', strtotime($post['created_at'])) ?></span></a>
                         </div>
                     </div>
-                    <!-- /post share -->
 
                     <!-- post content -->
                     <div class="section-row">
