@@ -101,7 +101,6 @@ $getAllTopics = selectAll('topics');
                         </div>
                     </div>
 
-                    <!-- post content -->
                     <div class="section-row">
                         <h3>
                             <?php echo $post['title'] ?>
@@ -112,9 +111,7 @@ $getAllTopics = selectAll('topics');
                         </p>
 
                     </div>
-                    <!-- /post content -->
-
-                    <!-- /related post -->
+]
                     <div>
                         <div class="section-title">
                             <h3 class="title">Related Posts</h3>
