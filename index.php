@@ -97,7 +97,6 @@ $getAllTopics = selectAll('topics');
 			<!-- row -->
 			<div id="hot-post" class="row hot-post">
 				<div class="col-md-8 hot-post-left">
-					<!-- post -->
 					<?php foreach ($posts as $key => $post) : ?>
 						<?php if ($key < 1) : ?>
 							<div class="post post-thumb">
@@ -134,7 +133,6 @@ $getAllTopics = selectAll('topics');
 							</div>
 						<?php endif; ?>
 					<?php endforeach; ?>
-					<!-- /post -->
 				</div>
 
 
