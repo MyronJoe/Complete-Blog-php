@@ -53,7 +53,6 @@ if (isset($_POST['term'])) {
 
     <!-- SECTION -->
     <div class="section">
-        <!-- container -->
         <div class="container">
             <div class="row">
                 <?php if (isset($_POST['term'])) : ?>
@@ -116,7 +115,6 @@ if (isset($_POST['term'])) {
             <?php require(ROOT_PATH . "/app/includes/footer.php") ?>
             <!-- /row -->
 
-            <!-- row -->
             <div class="footer-bottom row">
                 <div class="col-md-6 col-md-push-6">
                     <ul class="footer-nav">
@@ -135,7 +133,6 @@ if (isset($_POST['term'])) {
                     </div>
                 </div>
             </div>
-            <!-- /row -->
         </div>
     </footer>
 
