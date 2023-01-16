@@ -89,7 +89,6 @@ $getAllTopics = selectAll('topics');
 	<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 	<!-- /HEADER -->
 
-	<!-- SECTION -->
 	<div class="section">
 
 		<!-- container -->
