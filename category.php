@@ -55,7 +55,7 @@ if (isset($_GET['t_id'])) {
                 <div class="col-md-8">
 
                     <?php foreach ($all_posts as $key => $post) : ?>
-                        <!-- post -->
+                        
                         <div class="post post-widget">
                             <a class="post-img sm-img" href="post.php?post_id=<?php echo $post['id'] . '&title=' . $post['title'] ?>"><img src="<?php echo BASE_URL . '/assets/img/' . $post['image'] ?>" alt=""></a>
                             <div class="post-body">
@@ -85,7 +85,7 @@ if (isset($_GET['t_id'])) {
                                 <p><?php echo substr($post['body'], 0, 120) . '...' ?></p>
                             </div>
                         </div>
-                        <!-- /post -->
+
                     <?php endforeach; ?>
 
                 </div>
