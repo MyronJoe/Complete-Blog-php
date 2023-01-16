@@ -82,7 +82,6 @@ $getAllTopics = selectAll('topics');
 
                             <a><i class="fa fa-user"></i><span><?php echo $author['username'] ?></span></a>
 
-
                             <?php if ($post['topic_id']) : ?>
                                 <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
                                 <a href="<?php echo BASE_URL . '/category.php?t_id=' . $topic['id'] ?>">
@@ -111,7 +110,7 @@ $getAllTopics = selectAll('topics');
                         </p>
 
                     </div>
-]
+
                     <div>
                         <div class="section-title">
                             <h3 class="title">Related Posts</h3>
