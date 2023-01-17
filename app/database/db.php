@@ -123,8 +123,6 @@
         return $stmt->affected_rows;
     }
 
-
-
     //here is the db delete funtion
     function delete($table, $id){
         global $conn;
