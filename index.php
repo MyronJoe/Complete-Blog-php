@@ -90,10 +90,7 @@ $getAllTopics = selectAll('topics');
 	<!-- /HEADER -->
 
 	<div class="section">
-
-		<!-- container -->
 		<div class="container">
-			<!-- row -->
 			<div id="hot-post" class="row hot-post">
 				<div class="col-md-8 hot-post-left">
 					<?php foreach ($posts as $key => $post) : ?>
