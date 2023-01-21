@@ -99,8 +99,6 @@ if (isset($_GET['t_id'])) {
         </div>
     </div>
     
-
-    <!-- FOOTER -->
     <footer id="footer">
         <div class="container">
             <!-- row -->
