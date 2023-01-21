@@ -51,7 +51,6 @@ if (isset($_POST['term'])) {
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     <!-- /HEADER -->
 
-    <!-- SECTION -->
     <div class="section">
         <div class="container">
             <div class="row">
