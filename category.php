@@ -49,7 +49,6 @@ if (isset($_GET['t_id'])) {
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     <div class="section">
         <div class="container">
-            <!-- row -->
             <div class="row">
                 <h2 style="margin-left: 15px ;">Category: <?php echo $category['name']; ?></h2>
                 <div class="col-md-8">
