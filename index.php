@@ -133,7 +133,7 @@ $getAllTopics = selectAll('topics');
 
 
 				<div class="col-md-4 hot-post-right">
-					<!-- post -->
+	
 					<?php foreach ($posts as $key => $post) : ?>
 						<?php if ($key >= 1 && $key <= 2) : ?>
 							<div class="post post-thumb">
