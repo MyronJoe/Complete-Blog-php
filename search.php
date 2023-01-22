@@ -105,7 +105,7 @@ if (isset($_POST['term'])) {
         </div>
     </div>
 
-    
+
     <footer id="footer">
 
         <div class="container">
