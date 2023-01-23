@@ -25,8 +25,7 @@ if (isset($_GET['id'])) {
     $body= $post['body'];
     $topic_id = $post['topic_id'];
     $post_img = $post['image'];
-    $published = $post['published'];
-    
+    $published = $post['published']; 
 }
 
 //Delete functionality
