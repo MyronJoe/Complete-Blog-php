@@ -1,5 +1,4 @@
 <?php 
-    // require_once '../../path.php';
     require_once(ROOT_PATH . "/app/includes/session.php");
 
 ?>
