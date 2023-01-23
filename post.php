@@ -112,7 +112,6 @@ $getAllTopics = selectAll('topics');
                             <h3 class="title">Related Posts</h3>
                         </div>
                         <div class="row">
-                            <!-- post -->
                             <?php foreach ($posts as $key => $post) : ?>
                                 <?php if ($key < 3) : ?>
                                     <div class="col-md-4">
