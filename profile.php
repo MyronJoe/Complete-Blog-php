@@ -73,7 +73,6 @@
     <!-- HEADER -->
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     <!-- /HEADER -->
-
     <div class="container" style=" margin:2em auto;">
 
         <div class="image-sec">
