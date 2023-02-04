@@ -44,9 +44,7 @@
                 }
                 $i++;
             }
-    
-            // dump($sql);
-    
+
             $sql = $sql . " ORDER BY id DESC";
             $stmt = executeQuery($sql, $conditions);
             $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
