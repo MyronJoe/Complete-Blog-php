@@ -34,11 +34,8 @@
 //creating admin and normal user
     if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
 
-        // dump($_POST);
-
         $errors = validateUser($_POST, $errors);
         
-
         if (count($errors) === 0) {
             unset($_POST['passwordconfirm'], $_POST['register-btn'], $_POST['create-admin']);
             $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
