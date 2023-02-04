@@ -1,7 +1,6 @@
 <?php
     include(ROOT_PATH . '/app/database/db.php');
     include(ROOT_PATH . '/app/helpers/validateuser.php');
-    // include(ROOT_PATH . '/app/helpers/middlewear.php');
 
     $errors = [];
     $username = '';
